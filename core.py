@@ -41,9 +41,6 @@ def echo(update, context):
     elif "java" in update.message.text or "Java" in update.message.text:
         context.bot.send_message(chat_id=update.effective_chat.id, 
                                      text= "Java? Esse grupo já foi melhor, hein!")
-    
-    else:
-        print(update.message.text)
 
 
 def welcome(update, context, new_member):

@@ -1,6 +1,7 @@
 from telegram.ext import Updater
 from conf.settings import TELEGRAM_TOKEN, BOT_NAME
 from features import generateOffense
+from features import generateOffensePerson
 from threading import Timer
 
 updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
@@ -65,7 +66,7 @@ def welcome(update, context, new_member):
                                      " Seja bem vindo ao Grupo OpenCV Brasil!\n" +
                                      "Leia as regras na mensagem fixada! " +
                                      "Lá também tem alguns links úteis!\n\n" +
-                                     "E não se esqueça: Eu vim aqui com um sonho simples ... Um sonho de matar todos os humanos!")
+                                     generateOffensePerson.set_xing(new_member.first_name))
 
 
 def goodbye(update, context):
@@ -76,7 +77,7 @@ def goodbye(update, context):
 def empty_message(update, context):
     if update.message.new_chat_members:
         for new_member in update.message.new_chat_members:
-            if update.message.left_chat_member.username != BOT_NAME:
+            if new_member.username != BOT_NAME:
             # Bot was added to a group chat
                 return welcome(update, context, new_member)
     

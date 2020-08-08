@@ -1,14 +1,26 @@
 from telegram.ext import Updater
 from conf.settings import TELEGRAM_TOKEN, BOT_NAME
+from features import generateOffense
+from threading import Timer
 
 updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
 
 dispatcher = updater.dispatcher
 
 
+def callback_minute(context):
+    chat_id=context.job.context
+    context.bot.send_message(chat_id=chat_id, 
+                             text=generateOffense.generateOffense())
+
+
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, 
-    text="Minha história é como a de vocês, só que mais interessante, pois envolve robôs...")
+    #context.bot.send_message(chat_id=update.message.chat_id,
+                     #text="")
+
+    context.job_queue.run_repeating(callback_minute, interval=3600, first=1,
+                                    context=update.message.chat_id)
+
 
 from telegram.ext import CommandHandler
 start_handler = CommandHandler('start', start)
@@ -41,6 +53,10 @@ def echo(update, context):
     elif "java" in update.message.text or "Java" in update.message.text:
         context.bot.send_message(chat_id=update.effective_chat.id, 
                                      text= "Java? Esse grupo já foi melhor, hein!")
+    
+    elif "PHP" in update.message.text or "php" in update.message.text:
+        context.bot.send_message(chat_id=update.effective_chat.id, 
+                                     text= "PHP? Você acordou de um coma?")
 
 
 def welcome(update, context, new_member):

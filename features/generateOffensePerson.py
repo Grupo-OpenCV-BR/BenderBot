@@ -55,4 +55,4 @@ def set_xing(nome):
         'Cara de pau.',
         'Precisa pegar uma cana.']
 
-    return (f' {str(nome)} é a {random.choice(classificador)} mais {random.choice(xingneutro)} {random.choice(exagero)}. {random.choice(conclusao)}')
+    return (f'{str(nome)} é a {random.choice(classificador)} mais {random.choice(xingneutro)} {random.choice(exagero)}. {random.choice(conclusao)}')

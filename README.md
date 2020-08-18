@@ -16,4 +16,4 @@ Features a serem implementadas no curto prazo:
 
 Features a serem implementadas no longo prazo:
 
-- [x] Técnicas de Processamento de Linguagem Natural para que o bot interaja de forma semelhante à natual com os membros do grupo.
+- [ ] Técnicas de Processamento de Linguagem Natural para que o bot interaja de forma semelhante à natual com os membros do grupo.

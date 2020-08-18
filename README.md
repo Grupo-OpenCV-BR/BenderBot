@@ -5,13 +5,13 @@ O projeto ainda está em desenvolvimento e você pode colaborar. Existe uma list
 
 Features a serem implementadas no curto prazo:
 
-- Comandos /mute e /unmute: Comandos para habilitar e desabilitar as interações do bot com o grupo;
+- [x] Comandos /mute e /unmute: Comandos para habilitar e desabilitar as interações do bot com o grupo;
 
-- Timer para evitar que o bot flood o grupo xingando linguagens de programação;
+- [x] Timer para evitar que o bot flood o grupo xingando linguagens de programação;
 
-- Comando /helpOpenCV: Comando para ser utilizado quando o usuário tiver dúvidas sobre a instalação da openCV (ambiente Linux ou Windows). O bot deve enviar um lista de links úteis contendo tutoriais/intruções da doc oficial da openCV;
+- [ ] Comando /helpOpenCV: Comando para ser utilizado quando o usuário tiver dúvidas sobre a instalação da openCV (ambiente Linux ou Windows). O bot deve enviar um lista de links úteis contendo tutoriais/intruções da doc oficial da openCV;
 
-- Comando /help contendo informações sobre o bot: Uma lista de palavras-chave com as quais ele interage, lista de comandos e breve descrição do que cada um faz.
+- [x]Comando /help contendo informações sobre o bot: Uma lista de palavras-chave com as quais ele interage, lista de comandos e breve descrição do que cada um faz.
 
 
 Features a serem implementadas no longo prazo:

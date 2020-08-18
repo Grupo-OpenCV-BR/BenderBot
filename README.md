@@ -11,9 +11,9 @@ Features a serem implementadas no curto prazo:
 
 - [ ] Comando /helpOpenCV: Comando para ser utilizado quando o usuário tiver dúvidas sobre a instalação da openCV (ambiente Linux ou Windows). O bot deve enviar um lista de links úteis contendo tutoriais/intruções da doc oficial da openCV;
 
-- [x]Comando /help contendo informações sobre o bot: Uma lista de palavras-chave com as quais ele interage, lista de comandos e breve descrição do que cada um faz.
+- [x] Comando /help contendo informações sobre o bot: Uma lista de palavras-chave com as quais ele interage, lista de comandos e breve descrição do que cada um faz.
 
 
 Features a serem implementadas no longo prazo:
 
-- Técnicas de Processamento de Linguagem Natural para que o bot interaja de forma semelhante à natual com os membros do grupo.
+- [x] Técnicas de Processamento de Linguagem Natural para que o bot interaja de forma semelhante à natual com os membros do grupo.

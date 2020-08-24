@@ -9,9 +9,11 @@ Features a serem implementadas no curto prazo:
 
 - [x] Timer para evitar que o bot flood o grupo xingando linguagens de programação;
 
+- [x] Comando /help contendo informações sobre o bot: Uma lista de palavras-chave com as quais ele interage, lista de comandos e breve descrição do que cada um faz.
+
 - [ ] Comando /helpOpenCV: Comando para ser utilizado quando o usuário tiver dúvidas sobre a instalação da openCV (ambiente Linux ou Windows). O bot deve enviar um lista de links úteis contendo tutoriais/intruções da doc oficial da openCV;
 
-- [x] Comando /help contendo informações sobre o bot: Uma lista de palavras-chave com as quais ele interage, lista de comandos e breve descrição do que cada um faz.
+- [] Adicionar captcha para evitar bots KKK, frase idealizada "Responde essa merda de captcha se tu quer continuar no grupo"
 
 
 Features a serem implementadas no longo prazo:

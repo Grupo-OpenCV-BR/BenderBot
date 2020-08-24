@@ -13,7 +13,7 @@ Features a serem implementadas no curto prazo:
 
 - [ ] Comando /helpOpenCV: Comando para ser utilizado quando o usuário tiver dúvidas sobre a instalação da openCV (ambiente Linux ou Windows). O bot deve enviar um lista de links úteis contendo tutoriais/intruções da doc oficial da openCV;
 
-- [] Adicionar captcha para evitar bots KKK, frase idealizada "Responde essa merda de captcha se tu quer continuar no grupo"
+- [ ] Adicionar captcha para evitar bots KKK, frase idealizada "Responde essa merda de captcha se tu quer continuar no grupo"
 
 
 Features a serem implementadas no longo prazo:

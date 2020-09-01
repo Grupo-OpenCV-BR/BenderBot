@@ -16,6 +16,7 @@ idna==2.10
 pycparser==2.20
 python-dotenv==0.14.0
 python-telegram-bot==12.8
+pytz==2020.1
 requests==2.24.0
 rfc3986==1.4.0
 six==1.15.0

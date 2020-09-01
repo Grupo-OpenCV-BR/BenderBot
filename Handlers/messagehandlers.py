@@ -63,12 +63,12 @@ def echo(update, context):
 
 
 def welcome(update, context, new_member):
-    user_id = new_member.id
-    user_name = new_member.username
-    mention = "["+user_name+"](tg://user?id="+str(user_id)+")"
-    
+    #user_id = new_member.id
+    #user_name = new_member.username
+    #mention = "["+user_name+"](tg://user?id="+str(user_id)+")"
+    #print(bool(user_id))
     context.bot.send_message(chat_id=update.effective_chat.id, 
-                                        text= "Olá, " + (mention if user_id else new_member.first_name) + "!" +
+                                        text= "Olá, " + str(new_member.first_name) + "!" +
                                         " Seja bem vindo ao Grupo OpenCV Brasil!\n" +
                                         "Leia as regras na mensagem fixada! " +
                                         "Lá também tem alguns links úteis!\n\n" +

@@ -70,8 +70,8 @@ def welcome(update, context, new_member):
     context.bot.send_message(chat_id=update.effective_chat.id, 
                                         text= "Olá, " + str(new_member.first_name) + "!" +
                                         " Seja bem vindo ao Grupo OpenCV Brasil!\n" +
-                                        "Leia as regras na mensagem fixada! " +
-                                        "Lá também tem alguns links úteis!\n\n" +
+                                        "\nLeia as regras do grupo: https://github.com/Grupo-OpenCV-BR/Regras" +
+                                        "\n\nConheça nosso repositório de conteúdo gratuito: https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n" +
                                         generateOffensePerson.set_xing(new_member.first_name), parse_mode="Markdown")
 
 

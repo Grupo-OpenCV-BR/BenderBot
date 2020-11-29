@@ -9,16 +9,18 @@ from Handlers import messagehandlers
 from Handlers import commandhandlers
 from features import request
 
+
 class Bot:
 
     def __init__(self, offenseOn, muteOn):
         self.offenseOn = offenseOn
         self.mute = muteOn
 
+
 bender_bot = Bot(False, False)
 
-def main():
 
+def main():
     request.DontStopmeNOW()
     PORT = int(os.environ.get('PORT', 5000))
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
@@ -36,7 +38,7 @@ def main():
                           port=int(PORT),
                           url_path=TELEGRAM_TOKEN)
     updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
-    echo_handler = MessageHandler(Filters.text & (~Filters.command),messagehandlers.echo)
+    echo_handler = MessageHandler(Filters.text & (~Filters.command), messagehandlers.echo)
     dispatcher.add_handler(echo_handler)
     sys_handler = MessageHandler(Filters.status_update, messagehandlers.empty_message)
     dispatcher.add_handler(sys_handler)

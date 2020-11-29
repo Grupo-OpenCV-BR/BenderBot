@@ -1,0 +1,27 @@
+name: Bender Bot Rodrigues CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version:  3.8
+
+    - uses: akhileshns/heroku-deploy@v3.4.6
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "Bender Bot Rodrigues"
+          heroku_email: ${{secrets.HEROKU_API_KEY}}

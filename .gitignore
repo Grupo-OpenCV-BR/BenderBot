@@ -1,0 +1,6 @@
+conf/.env
+/conf/.env
+*.env
+
+src/conf/.env
+/src/conf/.env

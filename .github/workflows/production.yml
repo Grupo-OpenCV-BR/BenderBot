@@ -6,9 +6,6 @@ on:
 
 jobs:
   build:
-    env:
-
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4

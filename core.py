@@ -10,6 +10,8 @@ from Handlers import commandhandlers
 from features import request
 
 
+#Correção
+
 class Bot:
 
     def __init__(self, offenseOn, muteOn):

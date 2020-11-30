@@ -36,18 +36,18 @@ def main():
     dispatcher.add_handler(mute_handler)
     dispatcher.add_handler(unmute_handler)
     dispatcher.add_handler(help_handler)
-    updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
-                          url_path=TELEGRAM_TOKEN)
-    updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    # updater.start_webhook(listen="0.0.0.0",
+    #                       port=int(PORT),
+    #                       url_path=TELEGRAM_TOKEN)
+    # updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
     echo_handler = MessageHandler(Filters.text & (~Filters.command), messagehandlers.echo)
     dispatcher.add_handler(echo_handler)
     sys_handler = MessageHandler(Filters.status_update, messagehandlers.empty_message)
     dispatcher.add_handler(sys_handler)
 
-    # updater.start_polling()
-    #
-    # updater.idle()
+    updater.start_polling()
+
+    updater.idle()
 
 
 if __name__ == "__main__":

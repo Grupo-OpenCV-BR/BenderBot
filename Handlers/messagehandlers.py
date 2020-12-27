@@ -112,12 +112,17 @@ def echo(update, context):
 
     elif (
             "Assembly" in update.message.text or
-            "assembly" in update.message.text or
-            "Fortran" in update.message.text or
-            "fortran" in update.message.text
+            "assembly" in update.message.text
     ):
         context.bot.send_message(chat_id=update.effective_chat.id,
-                                 text="Assembly? De qual período da pré-história você? ")
+                                 text="Assembly? De qual período da pré-história é você? ")
+
+    elif (
+            "Fortran" in update.message.text or
+            "fortran" in update.message.text
+    ) :
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text="Fortran ? É uma brasa mora ! ")
 
     elif (
             "Projeto" in update.message.text or

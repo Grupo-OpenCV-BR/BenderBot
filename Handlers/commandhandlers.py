@@ -72,5 +72,5 @@ def help(update, context):
                                         "ATENÇÃO\n"+
                                         "Se eu ficar xingando de madrugada, basta usar o comando /mute_\n"+
                                         "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n"+
-                                        "Natalia, André e Felipe\n\n"+
+                                        "@natalia_py, @andresjc4215, @TioPerneta e @hugueds \n\n"+
                                         "E tenho dito!")

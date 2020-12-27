@@ -50,6 +50,6 @@ tornado==6.0.4
 ujson==3.2.0
 urllib3==1.25.10
 uvicorn==0.13.2
-uvloop = 0.14.0
+uvloop == 0.14.0
 watchgod==0.6
 websockets==8.1

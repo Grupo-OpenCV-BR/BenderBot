@@ -1,6 +1,7 @@
-conf/.env
-/conf/.env
-*.env
+Pipfile
+Pipfile.lock
 
-src/conf/.env
-/src/conf/.env
+/Pipfile
+/Pipfile.lock
+
+.env

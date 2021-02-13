@@ -1,11 +1,7 @@
-from telegram.ext import Updater
-from telegram.ext import CommandHandler
-
+import core
 from features import generateOffense
-from features import generateOffensePerson
 from features import timeHelper, blackListManager
 
-import core
 
 def callback_minute(context):
         if timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7:

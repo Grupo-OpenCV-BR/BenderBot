@@ -1,12 +1,12 @@
-from telegram.ext import Updater
-from telegram.ext import CommandHandler
-from telegram.ext import MessageHandler, Filters
-from functools import partial
-from conf.settings import TELEGRAM_TOKEN, BOT_NAME
 import os
 
-from Handlers import messagehandlers
+from telegram.ext import CommandHandler
+from telegram.ext import MessageHandler, Filters
+from telegram.ext import Updater
+
 from Handlers import commandhandlers
+from Handlers import messagehandlers
+from conf.settings import TELEGRAM_TOKEN
 from features import request
 
 

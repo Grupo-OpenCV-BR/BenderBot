@@ -27,14 +27,10 @@ def main():
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
-    start_handler = CommandHandler('start', commandhandlers.start)
-    mute_handler = CommandHandler('mute_', commandhandlers.mute_)
-    unmute_handler = CommandHandler('unmute', commandhandlers.unmute)
-    help_handler = CommandHandler('help', commandhandlers.help)
-    dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(mute_handler)
-    dispatcher.add_handler(unmute_handler)
-    dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
+    dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
+    dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
+    dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
 
     echo_handler = MessageHandler(Filters.text & (~Filters.command), messagehandlers.echo)
     dispatcher.add_handler(echo_handler)

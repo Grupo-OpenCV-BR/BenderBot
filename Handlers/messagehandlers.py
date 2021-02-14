@@ -1,3 +1,5 @@
+import random
+
 import core
 from conf.settings import BOT_NAME
 from features import generateOffensePerson
@@ -8,6 +10,22 @@ def echo(update, context):
         return
 
     if (
+            update.message.text == "bender, vc é um robo?" or
+            update.message.text == "Bender, vc é um robo?" or
+            update.message.text == "Bender vc é um robo?" or
+            update.message.text == "robo um bender vc é?" or
+            update.message.text == "Bender, vc é um robô?" or
+            update.message.text == "bender, vc é um robô?"
+    ):
+
+        text = ["Eu sou melhor que robô, sou melhor que humano, eu sou o Bender !!",
+                "Sou uma criatura superior, humano"
+                ]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
+
+    elif (
             update.message.text == "Bender você é desprezível" or
             update.message.text == "bender, você é desprezível" or
             update.message.text == "bender você e desprezível" or

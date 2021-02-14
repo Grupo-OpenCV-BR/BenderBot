@@ -51,21 +51,21 @@ def echo(update, context):
             "Obrigada" in update.message.text
     ):
 
-    context.bot.send_message(chat_id=update.effective_chat.id,
+        context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?")
 
     elif (
             "java" in update.message.text or
             "Java" in update.message.text
     ):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+        context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Java? Esse grupo já foi melhor, hein!")
 
     elif (
             "PHP" in update.message.text or
             "php" in update.message.text
     ):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+        context.bot.send_message(chat_id=update.effective_chat.id,
                              text="PHP? Você acordou de um coma?")
 
     elif (

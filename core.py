@@ -38,7 +38,7 @@ def main():
     request.DontStopmeNOW()
 
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
-    updater.start_polling()
+    # updater.start_polling()
 
     dispatcher = updater.dispatcher
 

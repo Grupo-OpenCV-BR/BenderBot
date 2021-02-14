@@ -51,14 +51,14 @@ def unmute(update, context):
                                     text= "I'm back, bitches! Mordam a minha bunda de metal!")
     
 def help(update, context):
-    blackListManager.free_members()
-    member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "help")
-    
-    if member_in_blacklist:
-        return
-    else:
-        blackListManager.add_member(update.message.from_user.first_name, "help")
-    
+    # blackListManager.free_members()
+    # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "help")
+    #
+    # if member_in_blacklist:
+    #     return
+    # else:
+    #     blackListManager.add_member(update.message.from_user.first_name, "help")
+    #
     context.bot.send_message(chat_id=update.effective_chat.id, 
                                         text= "LISTA DE COMANDOS:\n" +
                                         "/start -> Comando para que eu envie xingamentos a cada 1h\n"+

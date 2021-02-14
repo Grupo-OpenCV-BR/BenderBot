@@ -13,8 +13,6 @@ def callback_minute(context):
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id,
-                        text="")
 
     if not core.bender_bot.offenseOn and not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
         core.bender_bot.offenseOn = True

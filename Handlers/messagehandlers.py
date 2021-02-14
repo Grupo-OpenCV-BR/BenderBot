@@ -6,7 +6,18 @@ from features import generateOffensePerson
 def echo(update, context):
     if core.bender_bot.mute:
         return
+
     if (
+            update.message.text == "Bender você é desprezível" or
+            update.message.text == "bender, você é desprezível" or
+            update.message.text == "bender você e desprezível" or
+            update.message.text == "bender você é desprezível" or
+            update.message.text == "Bender, você é desprezível"
+    ):
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text="Ei não sou espelho, olhe para você humano desprezível")
+
+    elif (
             update.message.text == "Oi Bender" or
             update.message.text == "oi bender" or
             update.message.text == "Oi bender" or
@@ -40,22 +51,22 @@ def echo(update, context):
             "Obrigada" in update.message.text
     ):
 
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                                 text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?")
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?")
 
     elif (
             "java" in update.message.text or
             "Java" in update.message.text
     ):
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                                 text="Java? Esse grupo já foi melhor, hein!")
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Java? Esse grupo já foi melhor, hein!")
 
     elif (
             "PHP" in update.message.text or
             "php" in update.message.text
     ):
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                                 text="PHP? Você acordou de um coma?")
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="PHP? Você acordou de um coma?")
 
     elif (
             "Teoria" in update.message.text or

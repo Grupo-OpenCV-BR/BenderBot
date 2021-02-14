@@ -1,5 +1,3 @@
-import os
-
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import Updater
@@ -24,7 +22,7 @@ bender_bot = Bot(False, False)
 
 def main():
     request.DontStopmeNOW()
-    PORT = int(os.environ.get('PORT', 5000))
+
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 

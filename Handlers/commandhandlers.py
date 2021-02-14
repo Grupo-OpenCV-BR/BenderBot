@@ -13,8 +13,8 @@ def callback_minute(context):
 
 
 def start(update, context):
-    #context.bot.send_message(chat_id=update.message.chat_id,
-                        #text="")
+    context.bot.send_message(chat_id=update.message.chat_id,
+                        text="")
 
     if not core.bender_bot.offenseOn and not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
         core.bender_bot.offenseOn = True
@@ -22,7 +22,7 @@ def start(update, context):
                                             context=update.message.chat_id)
     else:
         if not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
-            context.bot.send_message(chat_id=update.effective_chat.id, 
+            context.bot.send_message(chat_id=update.effective_chat.id,
                                     text="Seu degenerado! Alguém já deu start em mim! " +
                                         "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
 

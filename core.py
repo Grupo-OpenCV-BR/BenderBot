@@ -12,6 +12,10 @@ from features import request
 
 PORT = int(os.environ.get('PORT', 5000))
 
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
 logger = logging.getLogger(__name__)
 
 
@@ -34,6 +38,8 @@ def main():
     request.DontStopmeNOW()
 
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
+    updater.start_polling()
+
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
@@ -46,8 +52,6 @@ def main():
     sys_handler = MessageHandler(Filters.status_update, messagehandlers.empty_message)
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
-
-    updater.start_polling()
 
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),

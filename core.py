@@ -1,3 +1,4 @@
+import logging
 import os
 
 from telegram.ext import CommandHandler
@@ -11,6 +12,9 @@ from features import request
 
 PORT = int(os.environ.get('PORT', 5000))
 
+logger = logging.getLogger(__name__)
+
+
 class Bot:
 
     def __init__(self, offenseOn, muteOn):
@@ -19,6 +23,11 @@ class Bot:
 
 
 bender_bot = Bot(False, False)
+
+
+def error(update, context):
+    """Log Errors caused by Updates."""
+    logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
 def main():
@@ -36,6 +45,7 @@ def main():
     dispatcher.add_handler(echo_handler)
     sys_handler = MessageHandler(Filters.status_update, messagehandlers.empty_message)
     dispatcher.add_handler(sys_handler)
+    dispatcher.add_error_handler(error)
 
     updater.start_polling()
 

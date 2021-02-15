@@ -10,17 +10,43 @@ def echo(update, context):
         return
 
     if (
-            update.message.text == "bender, vc é um robo?" or
-            update.message.text == "Bender, vc é um robo?" or
-            update.message.text == "Bender vc é um robo?" or
-            update.message.text == "robo um bender vc é?" or
-            update.message.text == "Bender, vc é um robô?" or
-            update.message.text == "bender, vc é um robô?"
+            update.message.text == "bender" or
+            update.message.text == "Bender" or
+            update.message.text == "Bneder" or
+            update.message.text == "bneder"
+
+    ):
+        text = ["Que foi humano ?",
+                "Fala humano",
+                "Oi ?!"
+                ]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
+
+    elif (
+            update.message.text == "bender" or
+            update.message.text == "Bender" or
+            update.message.text == "Bneder"
+
+    ):
+        text = ["Que foi humano ?",
+                "Fala humano",
+                "Oi ?!"
+                ]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
+
+    elif (
+            update.message.text == "Boa noite bender" or
+            update.message.text == "Bender boa noite " or
+            update.message.text == "bender boa noite" or
+            update.message.text == "boa noite Bender" or
+            update.message.text == "Boa Noite Bender"
     ):
 
-        text = ["Eu sou melhor que robô, sou melhor que humano, eu sou o Bender !!",
-                "Sou uma criatura superior, humano"
-                ]
+        text = ["Vai humano !"]
 
         context.bot.send_message(chat_id=update.effective_chat.id,
                                  text=random.choice(text))

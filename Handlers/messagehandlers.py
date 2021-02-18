@@ -10,6 +10,22 @@ def echo(update, context):
         return
 
     if (
+            update.message.text == "Bender, tu é?" or
+            update.message.text == "bender tu é?" or
+            update.message.text == "Bender tu e" or
+            update.message.text == "Bender, tu e ?" or
+            update.message.text == "Bender, tu e ?"
+
+    ):
+        text = ["Não sou você Humano !",
+                "Para com essas ideias",
+                "Não sou seu reflexo"
+                ]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
+
+    elif (
             update.message.text == "bender" or
             update.message.text == "Bender" or
             update.message.text == "Bneder" or

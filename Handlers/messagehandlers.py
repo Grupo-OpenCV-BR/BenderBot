@@ -19,11 +19,13 @@ def echo(update, context):
     ):
         text = ["Não sou você Humano !",
                 "Para com essas ideias",
-                "Não sou seu reflexo"
+                "Não sou seu reflexo "
                 ]
 
         context.bot.send_message(chat_id=update.effective_chat.id,
                                  text=random.choice(text))
+
+
 
     elif (
             update.message.text == "bender" or
@@ -112,14 +114,65 @@ def echo(update, context):
     ):
 
         context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?")
+                                 text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?")
+
+    elif (
+            "GO" in update.message.text or
+            "go" in update.message.text
+
+    ):
+
+        text = ["Go go go Power Ranger !",
+                "Go para onde Humano ?",
+                "Go Pher Gof Gof "
+                ]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
+
+    elif (
+            "Julia" in update.message.text or
+            "julia" in update.message.text
+
+    ):
+
+        text = ["Quem é Julia ?!"]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
+
+    elif (
+            "MATLAB" in update.message.text or
+            "matlab" in update.message.text
+
+    ):
+
+        text = ["Ai você está de sacanagem Humano !!",
+                "Mat o quê ?"
+                ]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+
+                                 text=random.choice(text))
+
+    elif (
+            "Python" in update.message.text or
+            "python" in update.message.text or
+            "py" in update.message.text
+
+    ):
+
+        text = ["O pytaon !!"]
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+                                 text=random.choice(text))
 
     elif (
             "java" in update.message.text or
             "Java" in update.message.text
     ):
         context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Java? Esse grupo já foi melhor, hein!")
+                                 text="Java? Esse grupo já foi melhor, hein!")
 
     elif (
             "PHP" in update.message.text or

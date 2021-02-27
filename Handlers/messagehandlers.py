@@ -118,7 +118,8 @@ def echo(update, context):
 
     elif (
             "GO" in update.message.text or
-            "go" in update.message.text
+            "go" in update.message.text or
+            "Go" in update.message.text or
 
     ):
 

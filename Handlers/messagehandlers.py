@@ -142,6 +142,23 @@ def echo(update, context):
         context.bot.send_message(chat_id=update.effective_chat.id,
                                  text=random.choice(text))
 
+
+    elif (
+            "Fuck you Bender Bot Rodrigues" in update.message.text or
+            "fuck you bender bot rodrigues" in update.message.text or
+            "fuck you" in update.message.text or
+            "fuck you bender" in update.message.text or
+            "Fuck You" in update.message.text
+
+    ):
+
+        text = "Fuck you? Fuck tu, fuck eu, fuck todo mundo  !!"
+
+        context.bot.send_message(chat_id=update.effective_chat.id,
+
+                                 text=random.choice(text))
+
+
     elif (
             "MATLAB" in update.message.text or
             "matlab" in update.message.text
@@ -149,7 +166,7 @@ def echo(update, context):
     ):
 
         text = ["Ai você está de sacanagem Humano !!",
-                "Mat o quê ?"
+                "Mat o quê ? Matemática"
                 ]
 
         context.bot.send_message(chat_id=update.effective_chat.id,

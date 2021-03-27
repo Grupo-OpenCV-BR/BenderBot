@@ -148,6 +148,7 @@ def echo(update, context):
             "fuck you bender bot rodrigues" in update.message.text or
             "fuck you" in update.message.text or
             "fuck you bender" in update.message.text or
+            "Fuck you bender bot" in update.message.text or
             "Fuck You" in update.message.text
 
     ):

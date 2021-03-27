@@ -153,7 +153,7 @@ def echo(update, context):
 
     ):
 
-        text = "Fuck you? Fuck tu, fuck eu, fuck todo mundo  !!"
+        text = ["Fuck you? Fuck tu, fuck eu, fuck todo mundo  !!"]
 
         context.bot.send_message(chat_id=update.effective_chat.id,
 

@@ -65,7 +65,7 @@ def echo(update, context):
     elif message in ["projeto", "projetinho", "ideia", "interno", "parceria", "hackathon"]:    
         context.bot.send_photo(chat_id=chat_id,photo=open('fry_shut_up_and_take_my_money.jpg', 'rb'))
 
-    elif message in ["indiano","indianos","chineses","china":    
+    elif message in ["indiano","indianos","chineses","china"]:    
         context.bot.send_photo(chat_id=chat_id, photo=open('JLClvEy.jpeg', 'rb'))
 
 

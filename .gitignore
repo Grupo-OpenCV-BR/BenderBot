@@ -5,3 +5,9 @@ Pipfile.lock
 /Pipfile.lock
 
 .env
+
+__pycache__/*
+__pycache__
+conf/__pycache__
+*/__pycache__
+*/__pycache__/*

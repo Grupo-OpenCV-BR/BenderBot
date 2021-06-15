@@ -47,7 +47,7 @@ def echo(update, context):
                                  text="Sendo sincero, se teu PC fosse um microondas, " +
                                       "não rodava nem o prato.")
 
-    elif message == "c++"
+    elif message == "c++":
         context.bot.send_message(chat_id=chat_id,
                                  text="Vocês sabem o que o C++ disse para o C?" + "\n\n" +
                                       "Resposta: Você não tem classe!")
@@ -55,11 +55,11 @@ def echo(update, context):
     elif message in ["puto", "puta"]:
         context.bot.send_photo(chat_id=chat_id, photo=open('baixa_bola.jpg', 'rb'))
 
-    elif message == "assembly"
+    elif message == "assembly":
         context.bot.send_message(chat_id=chat_id,
                                  text="Assembly? De qual período da pré-história é você? ")
 
-    elif message == "fortran"
+    elif message == "fortran":
         context.bot.send_message(chat_id=chat_id, text="Fortran ? É uma brasa mora ! ")
 
     elif message in ["projeto", "projetinho", "ideia", "interno", "parceria", "hackathon"]:    

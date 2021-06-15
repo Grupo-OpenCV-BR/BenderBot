@@ -1,11 +1,7 @@
-from telegram.ext import Updater
-from telegram.ext import CommandHandler
-
+import core
 from features import generateOffense
-from features import generateOffensePerson
 from features import timeHelper, blackListManager
 
-import core
 
 def callback_minute(context):
         if timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7:
@@ -17,8 +13,6 @@ def callback_minute(context):
 
 
 def start(update, context):
-    #context.bot.send_message(chat_id=update.message.chat_id,
-                        #text="")
 
     if not core.bender_bot.offenseOn and not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
         core.bender_bot.offenseOn = True
@@ -26,18 +20,18 @@ def start(update, context):
                                             context=update.message.chat_id)
     else:
         if not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
-            context.bot.send_message(chat_id=update.effective_chat.id, 
+            context.bot.send_message(chat_id=update.effective_chat.id,
                                     text="Seu degenerado! Alguém já deu start em mim! " +
                                         "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
 
 def mute_(update, context):
-    blackListManager.free_members()
-    member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "mute")
+    # blackListManager.free_members()
+    # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "mute")
     
-    if member_in_blacklist:
-        return
-    else:
-        blackListManager.add_member(update.message.from_user.first_name, "mute")
+    # if member_in_blacklist:
+    #     return
+    # else:
+    #     blackListManager.add_member(update.message.from_user.first_name, "mute")
     
     if core.bender_bot.mute:
         pass
@@ -53,24 +47,25 @@ def unmute(update, context):
         core.bender_bot.mute = False
         context.bot.send_message(chat_id=update.effective_chat.id, 
                                     text= "I'm back, bitches! Mordam a minha bunda de metal!")
-    
+
+
 def help(update, context):
-    blackListManager.free_members()
-    member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "help")
-    
-    if member_in_blacklist:
-        return
-    else:
-        blackListManager.add_member(update.message.from_user.first_name, "help")
-    
-    context.bot.send_message(chat_id=update.effective_chat.id, 
-                                        text= "LISTA DE COMANDOS:\n" +
-                                        "/start -> Comando para que eu envie xingamentos a cada 1h\n"+
-                                        "/mute_ -> Comando para eu calar a minha boca\n" +
-                                        "/unmute -> Comando para que eu volte a xingar vocês\n" +
-                                        "/help -> Comando que exibe esta lista de comandos\n\n" +
-                                        "ATENÇÃO\n"+
-                                        "Se eu ficar xingando de madrugada, basta usar o comando /mute_\n"+
-                                        "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n"+
-                                        "@natalia_py, @andresjc4215, @TioPerneta e @hugueds \n\n"+
-                                        "E tenho dito!")
+    # blackListManager.free_members()
+    # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "help")
+    #
+    # if member_in_blacklist:
+    #     return
+    # else:
+    #     blackListManager.add_member(update.message.from_user.first_name, "help")
+    #
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="LISTA DE COMANDOS:\n" +
+                                  "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
+                                  "/mute_ -> Comando para eu calar a minha boca\n" +
+                                  "/unmute -> Comando para que eu volte a xingar vocês\n" +
+                                  "/help -> Comando que exibe esta lista de comandos\n\n" +
+                                  "ATENÇÃO\n" +
+                                  "Se eu ficar xingando de madrugada, basta usar o comando /mute_\n" +
+                                  "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
+                                  "@natalia_py, @andresjc4215, @TioPerneta e @hugueds \n\n" +
+                                  "E tenho dito! Truuuuucccoooooooooooo Marreco !")

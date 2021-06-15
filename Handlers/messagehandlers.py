@@ -69,7 +69,7 @@ def echo(update, context):
         )
 
     elif message in ["puto", "puta"]:
-        context.bot.send_photo(chat_id=chat_id, photo=open("baixa_bola.jpg", "rb"))
+        context.bot.send_photo(chat_id=chat_id, photo=open("images/baixa_bola.jpg", "rb"))
 
     elif message == "assembly":
         context.bot.send_message(
@@ -88,12 +88,11 @@ def echo(update, context):
         "hackathon",
     ]:
         context.bot.send_photo(
-            chat_id=chat_id, photo=open("fry_shut_up_and_take_my_money.jpg", "rb")
+            chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
 
     elif message in ["indiano", "indianos", "chineses", "china"]:
-        context.bot.send_photo(chat_id=chat_id, photo=open("JLClvEy.jpeg", "rb"))
-
+        context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 
 def welcome(update, context, new_member):
     context.bot.send_message(

@@ -1,14 +1,14 @@
 import random
 
 import core
-from conf.settings import BOT_NAME
+from config.settings import BOT_NAME
 from features import generateOffensePerson
 
 
 def echo(update, context):
+
     if core.bender_bot.mute:
         return
-
     if (
             update.message.text == "Bender, tu é?" or
             update.message.text == "bender tu é?" or
@@ -237,81 +237,122 @@ def echo(update, context):
                                       "Resposta: Você não tem classe!")
 
 
-    elif (
-            "Puto" in update.message.text or
-            "PUTO" in update.message.text or
-            "PUTA" in update.message.text or
-            "Puta" in update.message.text or
-            "puto" in update.message.text or
-            "puta" in update.message.text
-    ):
+    if message == "oi bender":
+        context.bot.send_message(
+            chat_id=chat_id, text="Oi, vamos tomar um Velho Fortran?"
+        )
 
+    elif message == "muito bom":
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Qualquer coisa abaixo da imortalidade é uma perda de tempo completa!",
+        )
+
+    elif message in ["ajuda", "ajudar"]:
+        context.bot.send_message(
+            chat_id=chat_id, text="Humanos... Sempre precisando de ajuda.. tsc.. tsc..."
+        )
+
+    elif message in ["obrigado", "obrigada"]:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?",
+        )
+
+    elif message == "java":
+        context.bot.send_message(
+            chat_id=chat_id, text="Java? Esse grupo já foi melhor, hein!"
+        )
+
+    elif message == "php":
+        context.bot.send_message(chat_id=chat_id, text="PHP? Você acordou de um coma?")
+
+    elif message in ["teoria", "teórico", "teorico"]:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Teoria? Tá brincando com a minha cara? "
+            + "Bora meter a mão na porra do código!",
+        )
+
+    elif message == "excelente":
+        context.bot.send_message(
+            chat_id=chat_id, text="Excelente? Eu sei que sou, humanos..."
+        )
+
+    elif message in ["maquina", "pc", "computador"]:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Sendo sincero, se teu PC fosse um microondas, "
+            + "não rodava nem o prato.",
+        )
+
+    elif message == "c++":
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Vocês sabem o que o C++ disse para o C?"
+            + "\n\n"
+            + "Resposta: Você não tem classe!",
+        )
+
+    elif message in ["puto", "puta"]:
+        context.bot.send_photo(chat_id=chat_id, photo=open("images/baixa_bola.jpg", "rb"))
+
+    elif message == "assembly":
+        context.bot.send_message(
+            chat_id=chat_id, text="Assembly? De qual período da pré-história é você? "
+        )
+
+    elif message == "fortran":
+        context.bot.send_message(chat_id=chat_id, text="Fortran ? É uma brasa mora ! ")
+
+    elif message in [
+        "projeto",
+        "projetinho",
+        "ideia",
+        "interno",
+        "parceria",
+        "hackathon",
+    ]:
         context.bot.send_photo(
-            chat_id=update.effective_chat.id,
-            photo=open('baixa_bola.jpg', 'rb')
+            chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money.jpg", "rb")
+        )
+    
+    elif message in [
+        "Preciso de Ajuda",
+        "Alguém me ajuda",
+        "Alguém me ajuda",
+        "E tô precisando de ajuda",
+        "Eu tô precisando de ajuda",
+        
+    ]:
+        context.bot.send_photo(
+            chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb")
         )
 
 
-
-    elif (
-            "Assembly" in update.message.text or
-            "assembly" in update.message.text
-    ):
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                                 text="Assembly? De qual período da pré-história é você? ")
-
-    elif (
-            "Fortran" in update.message.text or
-            "fortran" in update.message.text
-    ) :
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                                 text="Fortran ? É uma brasa mora ! ")
-
-    elif (
-            "Projeto" in update.message.text or
-            "projeto" in update.message.text or
-            "projetinho" in update.message.text or
-            "ideia" in update.message.text or
-            "interno" in update.message.text or
-            "parceria" in update.message.text or
-            "hackthon" in update.message.text
-    ):
-        context.bot.send_photo(
-            chat_id=update.effective_chat.id,
-            photo=open('fry_shut_up_and_take_my_money.jpg', 'rb')
-        )
-
-    elif (
-            'Indiano' in update.message.text or
-            'indiano' in update.message.text or
-            'Indianos' in update.message.text or
-            'indianos' in update.message.text or
-            'chineses' in update.message.text or
-            'china' in update.message.text
-    ):
-        context.bot.send_photo(
-            chat_id=update.effective_chat.id,
-            photo=open('JLClvEy.jpeg', 'rb')
-        )
-
+    elif message in ["indiano", "indianos", "chineses", "china"]:
+        context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 
 def welcome(update, context, new_member):
-    # user_id = new_member.id
-    # user_name = new_member.username
-    # mention = "["+user_name+"](tg://user?id="+str(user_id)+")"
-    # print(bool(user_id))
-    context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Olá, " + str(new_member.first_name) + "!" +
-                                  " Seja bem vindo ao Grupo OpenCV Brasil!\n" +
-                                  "\nLeia as regras do grupo: https://github.com/Grupo-OpenCV-BR/Regras" +
-                                  "\n\nConheça nosso repositório de conteúdo gratuito: https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n" +
-                                  generateOffensePerson.set_xing(new_member.first_name), parse_mode="Markdown")
+    context.bot.send_message(
+        chat_id=chat_id,
+        text="Olá, "
+        + str(new_member.first_name)
+        + "!"
+        + " Seja bem vindo ao Grupo OpenCV Brasil!\n"
+        + "\nLeia as regras do grupo: https://github.com/Grupo-OpenCV-BR/Regras"
+        + "\n\nConheça nosso repositório de conteúdo gratuito: https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n"
+        + generateOffensePerson.set_xing(new_member.first_name),
+        parse_mode="Markdown",
+    )
 
 
 def goodbye(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Este é o pior tipo de discriminação...\n" +
-                                  "DISCRIMINAÇÃO CONTRA MIM!")
+    chat_id = update.effective_chat.id
+    context.bot.send_message(
+        chat_id=chat_id,
+        text="Este é o pior tipo de discriminação...\n" + "DISCRIMINAÇÃO CONTRA MIM!",
+    )
 
 
 def empty_message(update, context):

@@ -78,6 +78,7 @@ def welcome(update, context, new_member):
                                   generateOffensePerson.set_xing(new_member.first_name), parse_mode="Markdown")
 
 def goodbye(update, context):
+    chat_id = update.effective_chat.id
     context.bot.send_message(chat_id=chat_id,
                              text="Este é o pior tipo de discriminação...\n" +
                                   "DISCRIMINAÇÃO CONTRA MIM!")

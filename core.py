@@ -5,12 +5,11 @@ from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import Updater
 
-from Handlers import commandhandlers
-from Handlers import messagehandlers
-from conf.settings import TELEGRAM_TOKEN
+from Handlers import commandhandlers, messagehandlers
+from Bot import Bot
+from config.settings import TELEGRAM_TOKEN, PORT, DEBUG
 from features import request
 
-PORT = int(os.environ.get('PORT', 5000))
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -19,14 +18,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-class Bot:
-
-    def __init__(self, offenseOn, muteOn):
-        self.offenseOn = offenseOn
-        self.mute = muteOn
-
-
-bender_bot = Bot(False, False)
+bender_bot = Bot()
 
 
 def error(update, context):
@@ -38,7 +30,6 @@ def main():
     request.DontStopmeNOW()
 
     updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
-    # updater.start_polling()
 
     dispatcher = updater.dispatcher
 
@@ -53,10 +44,13 @@ def main():
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
 
-    updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
-                          url_path=TELEGRAM_TOKEN)
-    updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    if DEBUG:
+        updater.start_polling()
+    else:
+        updater.start_webhook(listen="0.0.0.0",
+                            port=int(PORT),
+                            url_path=TELEGRAM_TOKEN)
+        updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 
     updater.idle()
 

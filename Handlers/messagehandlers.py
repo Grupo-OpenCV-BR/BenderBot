@@ -91,6 +91,19 @@ def echo(update, context):
             chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
 
+    elif message in [
+        "Preciso de Ajuda",
+        "Alguém me ajuda",
+        "Alguém me ajuda",
+        "E tô precisando de ajuda",
+        "Eu tô precisando de ajuda",
+        
+    ]:
+        context.bot.send_photo(
+            chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb")
+        )
+
+
     elif message in ["indiano", "indianos", "chineses", "china"]:
         context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 

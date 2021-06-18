@@ -1,15 +1,13 @@
 import logging
-import os
 
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import Updater
 
-from Handlers import commandhandlers, messagehandlers
 from Bot import Bot
-from config.settings import TELEGRAM_TOKEN, PORT, DEBUG
+from Handlers import commandhandlers, messagehandlers
+from config.settings import TELEGRAM_TOKEN, DEBUG
 from features import request
-
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -17,8 +15,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-
-bender_bot = Bot()
+bender_bot = Bot(False, False)
 
 
 def error(update, context):
@@ -46,11 +43,11 @@ def main():
 
     if DEBUG:
         updater.start_polling()
-    else:
-        updater.start_webhook(listen="0.0.0.0",
-                            port=int(PORT),
-                            url_path=TELEGRAM_TOKEN)
-        updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    # else:
+    #     updater.start_webhook(listen="0.0.0.0",
+    #                         port=int(PORT),
+    #                         url_path=TELEGRAM_TOKEN)
+    #     updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 
     updater.idle()
 

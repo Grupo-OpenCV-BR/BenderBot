@@ -91,32 +91,23 @@ def echo(update, context):
             chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
 
-    elif message in [
-        "Preciso de Ajuda",
-        "Alguém me ajuda",
-        "Alguém me ajuda",
-        "E tô precisando de ajuda",
-        "Eu tô precisando de ajuda",
-        
-    ]:
-        context.bot.send_photo(
-            chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb")
-        )
-
+    elif message in ["Preciso de Ajuda", "Alguém me ajuda", "Alguem me ajuda", "alguem me ajuda", "alguém me ajuda"]:
+        context.bot.send_photo(chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb"))
 
     elif message in ["indiano", "indianos", "chineses", "china"]:
         context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 
+
 def welcome(update, context, new_member):
     context.bot.send_message(
-        chat_id=chat_id,
+        chat_id=update.effective_chat.id,
         text="Olá, "
-        + str(new_member.first_name)
-        + "!"
-        + " Seja bem vindo ao Grupo OpenCV Brasil!\n"
-        + "\nLeia as regras do grupo: https://github.com/Grupo-OpenCV-BR/Regras"
-        + "\n\nConheça nosso repositório de conteúdo gratuito: https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n"
-        + generateOffensePerson.set_xing(new_member.first_name),
+             + str(new_member.first_name)
+             + "!"
+             + " Seja bem vindo ao Grupo OpenCV Brasil!\n"
+             + "\nLeia as regras do grupo: https://github.com/Grupo-OpenCV-BR/Regras"
+             + "\n\nConheça nosso repositório de conteúdo gratuito: https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n"
+             + generateOffensePerson.set_xing(new_member.first_name),
         parse_mode="Markdown",
     )
 

@@ -1,5 +1,4 @@
 import logging
-
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import Updater
@@ -19,7 +18,6 @@ bender_bot = Bot(False, False)
 
 
 def error(update, context):
-    """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
@@ -43,11 +41,11 @@ def main():
 
     if DEBUG:
         updater.start_polling()
-    # else:
-    #     updater.start_webhook(listen="0.0.0.0",
-    #                         port=int(PORT),
-    #                         url_path=TELEGRAM_TOKEN)
-    #     updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    else:
+        updater.start_webhook(listen="0.0.0.0",
+                            port=int(PORT),
+                            url_path=TELEGRAM_TOKEN)
+        updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 
     updater.idle()
 

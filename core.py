@@ -42,6 +42,10 @@ def main():
     if DEBUG:
         updater.start_polling()
     else:
+        """
+        VAMO SUBIR TUDO PO
+        """
+
         updater.start_webhook(listen="0.0.0.0",
                             port=int(PORT),
                             url_path=TELEGRAM_TOKEN)

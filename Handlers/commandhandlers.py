@@ -1,28 +1,28 @@
 import core
 from features import generateOffense
-from features import timeHelper, blackListManager
+from features import timeHelper
 
 
 def callback_minute(context):
-        if timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7:
-            return
-        if not core.bender_bot.mute:
-            chat_id=context.job.context
-            context.bot.send_message(chat_id=chat_id, 
-                                    text=generateOffense.generateOffense())
+    if timeHelper.get_actual_time() >= 0 and timeHelper.get_actual_time() <= 7:
+        return
+    if not core.bender_bot.mute:
+        chat_id = context.job.context
+        context.bot.send_message(chat_id=chat_id,
+                                 text=generateOffense.generateOffense())
 
 
 def start(update, context):
-
-    if not core.bender_bot.offenseOn and not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
+    if not core.bender_bot.offenseOn and not (0 <= timeHelper.get_actual_time() <= 7):
         core.bender_bot.offenseOn = True
         context.job_queue.run_repeating(callback_minute, interval=3600, first=1,
-                                            context=update.message.chat_id)
+                                        context=update.message.chat_id)
     else:
         if not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
             context.bot.send_message(chat_id=update.effective_chat.id,
                                     text="Seu degenerado! Alguém já deu start em mim! " +
                                         "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
+
 
 def mute_(update, context):
     # blackListManager.free_members()
@@ -39,7 +39,8 @@ def mute_(update, context):
         core.bender_bot.mute = True
         context.bot.send_message(chat_id=update.effective_chat.id, 
                                             text= "Ok... Ok... Estou calando a boca!")
-    
+
+
 def unmute(update, context):
     if not core.bender_bot.mute:
         pass
@@ -67,5 +68,5 @@ def help(update, context):
                                   "ATENÇÃO\n" +
                                   "Se eu ficar xingando de madrugada, basta usar o comando /mute_\n" +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
-                                  "@natalia_py, @andresjc4215, @TioPerneta e @hugueds \n\n" +
+                                  "@natalia_py, @andreemidio1, @TioPerneta e @hugueds \n\n" +
                                   "E tenho dito! Truuuuucccoooooooooooo Marreco !")

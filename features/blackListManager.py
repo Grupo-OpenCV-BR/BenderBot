@@ -2,11 +2,13 @@ from . import timeHelper
 
 wait_time = 1800 #seg
 
+
 def add_member(person_name, command):
     time = timeHelper.get_unix_time()
     f = open("features/blacklist.txt", "a")
     f.write(person_name + "\t" + str(time) + "\t" + command +"\n")
     f.close()
+
 
 def free_members():
     actual_hour = timeHelper.get_unix_time()
@@ -23,6 +25,7 @@ def free_members():
     for line in new_black_list:
         f.write(line)
     f.close()
+
 
 def is_member_in_blacklist(person_name, command):
     #print(person_name)

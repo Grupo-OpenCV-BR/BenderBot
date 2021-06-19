@@ -20,6 +20,7 @@ bender_bot = Bot(False, False)
 
 PORT = int(os.environ.get('PORT', 5000))
 
+
 def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
@@ -45,6 +46,7 @@ def main():
 
     if DEBUG:
         updater.start_polling()
+
     else:
 
         updater.start_webhook(listen="0.0.0.0",

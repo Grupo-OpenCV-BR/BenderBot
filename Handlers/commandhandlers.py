@@ -39,6 +39,17 @@ def repo(update, context):
                                   "# E vão estudar bando de baderneiros !!")
 
 
+def vagas(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Vagas de Visão Computacional \n\n" +
+                                  "Visão Computacional -> https://www.linkedin.com/jobs/search/?f_WRA=true&geoId=106057199&keywords=Vis%C3%A3o%20computacional&location=Brasil&position=1&pageNum=0\n\n" +
+                                  "A Até conseguirmos criar uma plataforma de visualização dessas vagas aqui no grupo, iremos usar o link acima.\n\n " +
+                                  "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
+                                  "@natalia_py, @andreemidio1 , @TioPerneta e @hugueds \n\n" +
+                                  "Parem de vacilação e corram atrás, se você não for, você é um bundão !! \n\n")
+
+
+
 def mute_(update, context):
     # blackListManager.free_members()
     # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "mute")
@@ -78,6 +89,7 @@ def help(update, context):
                              text="LISTA DE COMANDOS:\n" +
                                   "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
                                   "/repo -> Comando para acessar nossos repositórios\n" +
+                                  "/vagas -> Comando para mostrar vagas de CV \n" +
                                   "/mute_ -> Comando para eu calar a minha boca\n" +
                                   "/unmute -> Comando para que eu volte a xingar vocês\n" +
                                   "/help -> Comando que exibe esta lista de comandos\n\n" +

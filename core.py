@@ -36,6 +36,7 @@ def main():
 
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
     dispatcher.add_handler(CommandHandler('repo', commandhandlers.repo))
+    dispatcher.add_handler(CommandHandler('vagas', commandhandlers.vagas))
     dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
     dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
     dispatcher.add_handler(CommandHandler('help', commandhandlers.help))

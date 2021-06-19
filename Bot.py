@@ -1,5 +1,8 @@
+from config import TELEGRAM_TOKEN
+
+
 class Bot:
-    token = '1620621066:AAG8Ori9AiBKFRoVyxlrVRbsML2Tn3Mh2Us'
+    token = TELEGRAM_TOKEN
 
     def __init__(self, offenseOn, muteOn):
         self.offenseOn = offenseOn

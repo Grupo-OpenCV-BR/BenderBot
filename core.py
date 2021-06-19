@@ -1,4 +1,6 @@
 import logging
+import os
+
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import Updater
@@ -29,6 +31,7 @@ def main():
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
+    dispatcher.add_handler(CommandHandler('repo', commandhandlers.repo))
     dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
     dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
     dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
@@ -46,9 +49,11 @@ def main():
         VAMO SUBIR TUDO PO
         """
 
+        PORT = int(os.environ.get('PORT', 5000))
+
         updater.start_webhook(listen="0.0.0.0",
-                            port=int(PORT),
-                            url_path=TELEGRAM_TOKEN)
+                              port=int(PORT),
+                              url_path=TELEGRAM_TOKEN)
         updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 
     updater.idle()

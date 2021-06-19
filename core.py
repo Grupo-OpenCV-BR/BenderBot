@@ -1,4 +1,5 @@
 import logging
+import os
 
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
@@ -6,7 +7,7 @@ from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
-from config.settings import TELEGRAM_TOKEN, DEBUG, PORT
+from config.settings import TELEGRAM_TOKEN, DEBUG
 from features import request
 
 # Enable logging
@@ -17,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 bender_bot = Bot(False, False)
 
+PORT = int(os.environ.get('PORT', 5000))
 
 def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
@@ -46,7 +48,7 @@ def main():
     else:
 
         updater.start_webhook(listen="0.0.0.0",
-                              port=int(PORT),
+                              port=PORT,
                               url_path=TELEGRAM_TOKEN)
         updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 

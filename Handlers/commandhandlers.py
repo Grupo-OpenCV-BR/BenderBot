@@ -33,7 +33,7 @@ def repo(update, context):
                                   "Prova e testes -> https://github.com/Grupo-OpenCV-BR/imagens-medicas \n\n" +
                                   "CookBook -> https://github.com/Grupo-OpenCV-BR/cookbook \n\n" +
                                   "Claro , o repositório mais importante -> https://github.com/Grupo-OpenCV-BR/BenderBot \n\n" +
-                                  "A contribuição é aberta, só mandar a PR que a @natalia_py e o @andreemidio1\n\n " +
+                                  "A contribuição é aberta, só mandar a PR que a @natalia_py e o @andreemidio1 aprovam\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
                                   "@natalia_py, @andreemidio1 , @TioPerneta e @hugueds \n\n\n\n" +
                                   "# E vão estudar bando de baderneiros !!")

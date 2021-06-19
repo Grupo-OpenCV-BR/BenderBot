@@ -52,7 +52,7 @@ def main():
     else:
 
         updater.start_webhook(listen="0.0.0.0",
-                              port=PORT,
+                              port=int(PORT),
                               url_path=TELEGRAM_TOKEN)
         updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 

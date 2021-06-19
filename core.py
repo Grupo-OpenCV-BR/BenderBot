@@ -20,7 +20,7 @@ bender_bot = Bot(False, False)
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 BOT_NAME = os.getenv("BOT_NAME")
 DEBUG = True if os.getenv("DEBUG") else False
-PORT = int(os.environ.get('PORT', 5000))
+
 
 
 def error(update, context):
@@ -51,7 +51,10 @@ def main():
     # updater.start_polling()
     #
     # else:
+
+    PORT = int(os.environ.get('PORT', 5000))
     logging.info(f'Porta de comunicação {PORT}')
+
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TELEGRAM_TOKEN)

@@ -4,7 +4,6 @@ from features import generateOffensePerson
 
 
 def echo(update, context):
-
     if core.bender_bot.mute:
         return
 
@@ -45,7 +44,7 @@ def echo(update, context):
         context.bot.send_message(
             chat_id=chat_id,
             text="Teoria? Tá brincando com a minha cara? "
-            + "Bora meter a mão na porra do código!",
+                 + "Bora meter a mão na porra do código!",
         )
 
     elif message == "excelente":
@@ -57,15 +56,15 @@ def echo(update, context):
         context.bot.send_message(
             chat_id=chat_id,
             text="Sendo sincero, se teu PC fosse um microondas, "
-            + "não rodava nem o prato.",
+                 + "não rodava nem o prato.",
         )
 
     elif message == "c++":
         context.bot.send_message(
             chat_id=chat_id,
             text="Vocês sabem o que o C++ disse para o C?"
-            + "\n\n"
-            + "Resposta: Você não tem classe!",
+                 + "\n\n"
+                 + "Resposta: Você não tem classe!",
         )
 
     elif message in ["puto", "puta"]:
@@ -90,22 +89,11 @@ def echo(update, context):
         context.bot.send_photo(
             chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
-     
-    elif message in [
-        "Preciso de Ajuda",
-        "Alguém me ajuda",
-        "Alguém me ajuda",
-        "E tô precisando de ajuda",
-        "Eu tô precisando de ajuda",
-        
-        ]:
-        context.bot.send_photo(
-            chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb")
-        )
 
 
     elif message in ["Preciso de Ajuda", "Alguém me ajuda", "Alguem me ajuda", "alguem me ajuda", "alguém me ajuda"]:
         context.bot.send_photo(chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb"))
+
 
     elif message in ["indiano", "indianos", "chineses", "china"]:
         context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))

@@ -50,7 +50,7 @@ def main():
         updater.start_polling()
 
     else:
-
+        logging.info(f'Porta de comunicação {PORT}')
         updater.start_webhook(listen="0.0.0.0",
                               port=int(PORT),
                               url_path=TELEGRAM_TOKEN)
@@ -60,5 +60,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print(f'porta de comunicação {PORT}')
     main()

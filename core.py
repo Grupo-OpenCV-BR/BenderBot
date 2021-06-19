@@ -7,7 +7,7 @@ from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
-from config.settings import TELEGRAM_TOKEN, DEBUG
+from config.settings import TELEGRAM_TOKEN, DEBUG, PORTs
 from features import request
 
 # Enable logging
@@ -48,8 +48,6 @@ def main():
         """
         VAMO SUBIR TUDO PO
         """
-
-        PORT = int(os.environ.get('PORT', 5000))
 
         updater.start_webhook(listen="0.0.0.0",
                               port=int(PORT),

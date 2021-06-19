@@ -7,7 +7,7 @@ from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
-from config.settings import TELEGRAM_TOKEN, DEBUG
+
 from features import request
 
 # Enable logging
@@ -18,6 +18,9 @@ logger = logging.getLogger(__name__)
 
 bender_bot = Bot(False, False)
 
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+BOT_NAME = os.getenv("BOT_NAME")
+DEBUG = True if os.getenv("DEBUG") else False
 PORT = int(os.environ.get('PORT', 5000))
 
 

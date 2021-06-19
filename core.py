@@ -1,5 +1,4 @@
 import logging
-import os
 
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
@@ -45,9 +44,6 @@ def main():
     if DEBUG:
         updater.start_polling()
     else:
-        """
-        VAMO SUBIR TUDO PO
-        """
 
         updater.start_webhook(listen="0.0.0.0",
                               port=int(PORT),

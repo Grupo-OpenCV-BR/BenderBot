@@ -18,16 +18,31 @@ def start(update, context):
         context.job_queue.run_repeating(callback_minute, interval=3600, first=1,
                                         context=update.message.chat_id)
     else:
-        if not (timeHelper.get_actual_time() >=0 and timeHelper.get_actual_time() <=7):
+        if not (timeHelper.get_actual_time() >= 0 and timeHelper.get_actual_time() <= 7):
             context.bot.send_message(chat_id=update.effective_chat.id,
-                                    text="Seu degenerado! Alguém já deu start em mim! " +
-                                        "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
+                                     text="Seu degenerado! Alguém já deu start em mim! " +
+                                          "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
+
+
+def repo(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Nossos repositórios\n\n" +
+                                  "Grupo-OpenCV-BR -> https://github.com/Grupo-OpenCV-BR\n\n" +
+                                  "Tutoriais e Dicas -> https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n" +
+                                  "Imagens Médicas -> https://github.com/Grupo-OpenCV-BR/imagens-medicas\n\n" +
+                                  "Prova e testes -> https://github.com/Grupo-OpenCV-BR/imagens-medicas \n\n" +
+                                  "CookBook -> https://github.com/Grupo-OpenCV-BR/cookbook \n\n" +
+                                  "Claro , o repositório mais importante -> https://github.com/Grupo-OpenCV-BR/BenderBot \n\n" +
+                                  "A contribuição é aberta, só mandar a PR que a @natalia_py e o @andreemidio1\n\n " +
+                                  "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
+                                  "@natalia_py, @andreemidio1 , @TioPerneta e @hugueds \n\n\n\n" +
+                                  "# E vão estudar bando de baderneiros !!")
 
 
 def mute_(update, context):
     # blackListManager.free_members()
     # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "mute")
-    
+
     # if member_in_blacklist:
     #     return
     # else:
@@ -62,6 +77,7 @@ def help(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="LISTA DE COMANDOS:\n" +
                                   "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
+                                  "/repo -> Comando para acessar nossos repositórios\n" +
                                   "/mute_ -> Comando para eu calar a minha boca\n" +
                                   "/unmute -> Comando para que eu volte a xingar vocês\n" +
                                   "/help -> Comando que exibe esta lista de comandos\n\n" +

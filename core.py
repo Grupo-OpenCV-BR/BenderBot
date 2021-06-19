@@ -7,7 +7,7 @@ from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
-from config.settings import TELEGRAM_TOKEN, DEBUG, PORTs
+from config.settings import TELEGRAM_TOKEN, DEBUG, PORT
 from features import request
 
 # Enable logging

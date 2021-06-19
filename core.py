@@ -7,7 +7,6 @@ from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
-
 from features import request
 
 # Enable logging
@@ -61,4 +60,5 @@ def main():
 
 
 if __name__ == "__main__":
+    print(f'porta de comunicação {PORT}')
     main()

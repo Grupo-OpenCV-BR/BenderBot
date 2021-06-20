@@ -54,6 +54,8 @@ def main():
 
     if DEBUG is True:
         updater.start_polling()
+        updater.idle()
+
 
 
     else:
@@ -63,8 +65,7 @@ def main():
                               port=PORT,
                               url_path=TELEGRAM_TOKEN,
                               webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
-
-    updater.idle()
+        updater.idle()
 
 
 if __name__ == "__main__":

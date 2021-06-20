@@ -21,7 +21,7 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 BOT_NAME = os.getenv("BOT_NAME")
 DEBUG = True if os.getenv("DEBUG") else False
 
-PORT = int(os.environ.get('PORT', '8443'))
+PORT = int(os.environ.get('PORT', '5000'))
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -58,7 +58,7 @@ def main():
     # logging.info(f'Porta de comunicação {PORT}')
     #
     # updater.start_webhook(listen="0.0.0.0",
-    #                       port=PORT,
+    #                       port=int(PORT),
     #                       url_path=TELEGRAM_TOKEN,
     #                       webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
     # updater.idle()

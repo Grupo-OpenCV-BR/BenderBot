@@ -52,8 +52,8 @@ def main():
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
 
-    if DEBUG is True:
-        updater.start_polling()
+    # if DEBUG is True:
+    #     updater.start_polling()
 
     logging.info(f'Porta de comunicação {PORT}')
 

@@ -52,20 +52,13 @@ def main():
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
 
-    if DEBUG is True:
-        updater.start_polling()
-        updater.idle()
+    logging.info(f'Porta de comunicação {PORT}')
 
-
-
-    else:
-        logging.info(f'Porta de comunicação {PORT}')
-
-        updater.start_webhook(listen="0.0.0.0",
-                              port=PORT,
-                              url_path=TELEGRAM_TOKEN,
-                              webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
-        updater.idle()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=TELEGRAM_TOKEN,
+                          webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    updater.idle()
 
 
 if __name__ == "__main__":

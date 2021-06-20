@@ -40,6 +40,9 @@ def repo(update, context):
 
 
 def vagas(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Humano para receber vagas me chame no privado.")
+
     context.bot.send_message(chat_id=update.effective_user.id,
                              text="Vagas de Visão Computacional \n\n" +
                                   "Visão Computacional -> https://www.linkedin.com/jobs/search/?f_WRA=true&geoId=106057199&keywords=Vis%C3%A3o%20computacional&location=Brasil&position=1&pageNum=0\n\n" +

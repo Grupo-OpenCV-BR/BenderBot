@@ -20,7 +20,12 @@ bender_bot = Bot(False, False)
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 BOT_NAME = os.getenv("BOT_NAME")
 DEBUG = True if os.getenv("DEBUG") else False
-port = int(os.environ.get('PORT', 5000))
+
+PORT = int(os.environ.get('PORT', '8443'))
+
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.info(str(PORT))
 
 
 def error(update, context):
@@ -47,18 +52,19 @@ def main():
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
 
-    if DEBUG:
-        updater.start_polling()
-        updater.idle()
+    # if DEBUG is True:
+    #     updater.start_polling()
+    #     updater.idle()
+    #
+    # else:
+    logging.info(f'Porta de comunicação {PORT}')
 
-    else:
-        logging.info(f'Porta de comunicação {port}')
-        updater.start_webhook(listen="0.0.0.0",
-                              port=port,
-                              url_path=TELEGRAM_TOKEN)
-        updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=TELEGRAM_TOKEN,
+                          webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 
-        updater.idle()
+    updater.idle()
 
 
 if __name__ == "__main__":

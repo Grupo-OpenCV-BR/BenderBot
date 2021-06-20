@@ -1,6 +1,11 @@
+from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.utils import helpers
+
 import core
 from features import generateOffense
 from features import timeHelper
+
+SO_COOL = "so-cool"
 
 
 def callback_minute(context):
@@ -40,14 +45,23 @@ def repo(update, context):
 
 
 def vagas(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+    bot = context.bot
+    url = helpers.create_deep_linked_url(bot.username, SO_COOL)
+
+    keyboard = InlineKeyboardMarkup.from_button(
+        InlineKeyboardButton("Só me chame se nunca falou comigo rs", url=url)
+    )
+
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Humano para receber vagas me chame no privado.",
+                             reply_markup=keyboard)
+
+    context.bot.send_message(chat_id=update.effective_user.id,
                              text="Vagas de Visão Computacional \n\n" +
                                   "Visão Computacional -> https://www.linkedin.com/jobs/search/?f_WRA=true&geoId=106057199&keywords=Vis%C3%A3o%20computacional&location=Brasil&position=1&pageNum=0\n\n" +
                                   "A Até conseguirmos criar uma plataforma de visualização dessas vagas aqui no grupo, iremos usar o link acima.\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
                                   "@natalia_py, @andreemidio1 , @TioPerneta e @hugueds \n\n" +
                                   "Parem de vacilação e corram atrás, se você não for, você é um bundão !! \n\n")
-
 
 
 def mute_(update, context):

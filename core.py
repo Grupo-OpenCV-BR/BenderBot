@@ -21,7 +21,7 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 BOT_NAME = os.getenv("BOT_NAME")
 DEBUG = True if os.getenv("DEBUG") else False
 
-PORT = int(os.environ.get('PORT', '8443'))
+PORT = int(os.environ.get('PORT', '5000'))
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -51,6 +51,9 @@ def main():
     sys_handler = MessageHandler(Filters.status_update, messagehandlers.empty_message)
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
+
+    # if DEBUG is True:
+    #     updater.start_polling()
 
     logging.info(f'Porta de comunicação {PORT}')
 

@@ -1,4 +1,5 @@
 class Bot:
+    token = ''
 
 
     def __init__(self, offenseOn, muteOn):

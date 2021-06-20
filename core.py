@@ -42,6 +42,7 @@ def main():
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
     dispatcher.add_handler(CommandHandler('repo', commandhandlers.repo))
     dispatcher.add_handler(CommandHandler('vagas', commandhandlers.vagas))
+    dispatcher.add_handler(CommandHandler('jose', commandhandlers.jose))
     dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
     dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
     dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
@@ -52,13 +53,19 @@ def main():
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
 
-    logging.info(f'Porta de comunicação {PORT}')
-
-    updater.start_webhook(listen="0.0.0.0",
-                          port=PORT,
-                          url_path=TELEGRAM_TOKEN,
-                          webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    updater.start_polling()
     updater.idle()
+
+
+
+
+    # logging.info(f'Porta de comunicação {PORT}')
+    #
+    # updater.start_webhook(listen="0.0.0.0",
+    #                       port=PORT,
+    #                       url_path=TELEGRAM_TOKEN,
+    #                       webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    # updater.idle()
 
 
 if __name__ == "__main__":

@@ -7,7 +7,6 @@ from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
-from config.settings import TELEGRAM_TOKEN, DEBUG
 from features import request
 
 # Enable logging
@@ -17,6 +16,11 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 bender_bot = Bot(False, False)
+
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+BOT_NAME = os.getenv("BOT_NAME")
+DEBUG = True if os.getenv("DEBUG") else False
+port = int(os.environ.get('PORT', 5000))
 
 
 def error(update, context):
@@ -32,6 +36,7 @@ def main():
 
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
     dispatcher.add_handler(CommandHandler('repo', commandhandlers.repo))
+    dispatcher.add_handler(CommandHandler('vagas', commandhandlers.vagas))
     dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
     dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
     dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
@@ -44,19 +49,16 @@ def main():
 
     if DEBUG:
         updater.start_polling()
+        updater.idle()
+
     else:
-        """
-        VAMO SUBIR TUDO PO
-        """
-
-        PORT = int(os.environ.get('PORT', 5000))
-
+        logging.info(f'Porta de comunicação {port}')
         updater.start_webhook(listen="0.0.0.0",
-                              port=int(PORT),
+                              port=port,
                               url_path=TELEGRAM_TOKEN)
         updater.bot.setWebhook('https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
 
-    updater.idle()
+        updater.idle()
 
 
 if __name__ == "__main__":

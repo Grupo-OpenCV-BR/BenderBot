@@ -40,7 +40,7 @@ def repo(update, context):
                                   "Claro , o repositório mais importante -> https://github.com/Grupo-OpenCV-BR/BenderBot \n\n" +
                                   "A contribuição é aberta, só mandar a PR que a @natalia_py e o @andreemidio1 aprovam\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
-                                  "@natalia_py, @andreemidio1 , @TioPerneta e @hugueds \n\n\n\n" +
+                                  "@ natalia_py, @andreemidio1 , @ TioPerneta e @ hugueds \n\n\n\n" +
                                   "# E vão estudar bando de baderneiros !!")
 
 
@@ -60,7 +60,7 @@ def vagas(update, context):
                                   "Visão Computacional -> https://www.linkedin.com/jobs/search/?f_WRA=true&geoId=106057199&keywords=Vis%C3%A3o%20computacional&location=Brasil&position=1&pageNum=0\n\n" +
                                   "A Até conseguirmos criar uma plataforma de visualização dessas vagas aqui no grupo, iremos usar o link acima.\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
-                                  "@natalia_py, @andreemidio1 , @TioPerneta e @hugueds \n\n" +
+                                  "@ natalia_py, @andreemidio1 , @ TioPerneta e @ hugueds \n\n" +
                                   "Parem de vacilação e corram atrás, se você não for, você é um bundão !! \n\n")
 
 
@@ -110,5 +110,5 @@ def help(update, context):
                                   "ATENÇÃO\n" +
                                   "Se eu ficar xingando de madrugada, basta usar o comando /mute_\n" +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
-                                  "@natalia_py, @andreemidio1, @TioPerneta e @hugueds \n\n" +
+                                  "@ natalia_py, @andreemidio1, @ TioPerneta e @ hugueds \n\n" +
                                   "E tenho dito! Truuuuucccoooooooooooo Marreco !")

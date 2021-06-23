@@ -27,7 +27,7 @@ def echo(update, context):
             text="Tá com tempo humano ?!?!",
         )
 
-    elif message == ["Bom dia Bender", "Bom dia bender"]:
+    elif message == ["Boa tarde Bender", "Boa tarde bender"]:
         context.bot.send_message(
             chat_id=chat_id,
             text="É, tá com muito tempo mesmo ?!?!",

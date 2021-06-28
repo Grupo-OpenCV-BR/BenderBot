@@ -15,6 +15,25 @@ def echo(update, context):
             chat_id=chat_id, text="Oi, vamos tomar um Velho Fortran?"
         )
 
+    elif message == ["Boa noite", "Boa noite Bender", "Boa noite bender"]:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Vai humano !",
+        )
+
+    elif message == ["Bom dia Bender", "Bom dia bender"]:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Tá com tempo humano ?!?!",
+        )
+
+    elif message == ["Boa tarde Bender", "Boa tarde bender"]:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="É, tá com muito tempo mesmo ?!?!",
+        )
+
+
     elif message == "muito bom":
         context.bot.send_message(
             chat_id=chat_id,

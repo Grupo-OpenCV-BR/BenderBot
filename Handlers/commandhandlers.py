@@ -34,6 +34,7 @@ def repo(update, context):
                              text="Nossos repositórios\n\n" +
                                   "Grupo-OpenCV-BR -> https://github.com/Grupo-OpenCV-BR\n\n" +
                                   "Tutoriais e Dicas -> https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n" +
+                                  "Desafios -> https://github.com/Grupo-OpenCV-BR/desafios \n\n" +
                                   "Imagens Médicas -> https://github.com/Grupo-OpenCV-BR/imagens-medicas\n\n" +
                                   "Prova e testes -> https://github.com/Grupo-OpenCV-BR/imagens-medicas \n\n" +
                                   "CookBook -> https://github.com/Grupo-OpenCV-BR/cookbook \n\n" +
@@ -42,6 +43,7 @@ def repo(update, context):
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
                                   "@ natalia_py, @andreemidio1 , @ TioPerneta e @ hugueds \n\n\n\n" +
                                   "# E vão estudar bando de baderneiros !!")
+
 
 
 def vagas(update, context):

@@ -28,7 +28,6 @@ def start(update, context):
                                      text="Seu degenerado! Alguém já deu start em mim! " +
                                           "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
 
-
 def repo(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Nossos repositórios\n\n" +

@@ -28,6 +28,17 @@ def start(update, context):
                                      text="Seu degenerado! Alguém já deu start em mim! " +
                                           "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
 
+
+def eventos(update, context):
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open("images/photo_2021-11-04_17-53-06.jpg", "rb"))
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text=f"@{update.effective_chat.username} o(s) próximo(s) evento(s)\n\n" +
+                                  "Introdução a Visão Computacional" +
+                                  "Data :  09/11/2021 \n\n" +
+                                  "Horário :  19h \n\n" +
+                                  "Instrutor :  Elton Fernando \n\n" +
+                                  "# E vão estudar bando de baderneiros !!")
+
 def repo(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Nossos repositórios\n\n" +

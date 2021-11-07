@@ -1,4 +1,5 @@
 import core
+from Handlers import dados
 from config.settings import BOT_NAME
 from features import generateOffensePerson
 
@@ -116,6 +117,9 @@ def echo(update, context):
 
     elif message in ["indiano", "indianos", "chineses", "china"]:
         context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
+
+    elif '#evento' in message:
+        dados.salva('eventos', 'evento', message)
 
 
 def welcome(update, context, new_member):

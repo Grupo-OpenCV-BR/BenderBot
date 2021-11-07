@@ -13,3 +13,8 @@ def salva(mensagem, table, colum):
     with open('./dados.json', 'w') as dados:
         json.dump(eventos, dados, indent=4)
 
+
+def getArquivos(table):
+    with open('./dados.json', 'r') as dados:
+        dado = json.load(dados)
+        return dado[table]

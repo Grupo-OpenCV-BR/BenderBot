@@ -1,4 +1,5 @@
 import core
+import re
 from Handlers import dados
 from config.settings import BOT_NAME
 from features import generateOffensePerson
@@ -34,7 +35,6 @@ def echo(update, context):
             text="É, tá com muito tempo mesmo ?!?!",
         )
 
-
     elif message == "muito bom":
         context.bot.send_message(
             chat_id=chat_id,
@@ -58,7 +58,8 @@ def echo(update, context):
         )
 
     elif message == "php":
-        context.bot.send_message(chat_id=chat_id, text="PHP? Você acordou de um coma?")
+        context.bot.send_message(
+            chat_id=chat_id, text="PHP? Você acordou de um coma?")
 
     elif message in ["teoria", "teórico", "teorico"]:
         context.bot.send_message(
@@ -88,7 +89,8 @@ def echo(update, context):
         )
 
     elif message in ["puto", "puta"]:
-        context.bot.send_photo(chat_id=chat_id, photo=open("images/baixa_bola.jpg", "rb"))
+        context.bot.send_photo(chat_id=chat_id, photo=open(
+            "images/baixa_bola.jpg", "rb"))
 
     elif message == "assembly":
         context.bot.send_message(
@@ -96,7 +98,8 @@ def echo(update, context):
         )
 
     elif message == "fortran":
-        context.bot.send_message(chat_id=chat_id, text="Fortran ? É uma brasa mora ! ")
+        context.bot.send_message(
+            chat_id=chat_id, text="Fortran ? É uma brasa mora ! ")
 
     elif message in [
         "projeto",
@@ -107,19 +110,45 @@ def echo(update, context):
         "hackathon",
     ]:
         context.bot.send_photo(
-            chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money.jpg", "rb")
+            chat_id=chat_id, photo=open(
+                "images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
 
-
     elif message in ["Preciso de Ajuda", "Alguém me ajuda", "Alguem me ajuda", "alguem me ajuda", "alguém me ajuda"]:
-        context.bot.send_photo(chat_id=chat_id, photo=open("images/send_my_burguer_image.jpg", "rb"))
-
+        context.bot.send_photo(chat_id=chat_id, photo=open(
+            "images/send_my_burguer_image.jpg", "rb"))
 
     elif message in ["indiano", "indianos", "chineses", "china"]:
-        context.bot.send_photo(chat_id=chat_id, photo=open("images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
+        context.bot.send_photo(chat_id=chat_id, photo=open(
+            "images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 
     elif '#evento' in message:
-        dados.salva('eventos', 'evento', message)
+        file_id = message.document.file_id
+        newFile = bot.get_file(file_id)
+        newFile.download()
+                
+        update.message.reply_text("Image received")
+
+        dates = re.findall(
+            '([1-9]|1[0-9]|2[0-9]|3[0-1]|0[0-9])(.|-|\/)([1-9]|1[0-2]|0[0-9])(.|-|\/)(20[0-9][0-9])', message)
+
+        dates = [''.join(dates[i]) for i in range(len(dates))]
+
+        print(dates)
+
+        pattern = r'(?:#?\b\w\w+\b)'
+        pattern = re.compile(pattern)
+        results = pattern.findall(message)
+
+        novo_texto = " ".join(results[1:-1])
+        print(novo_texto)
+
+        data = dict(
+            data=dates[0],
+            Nome=novo_texto, 
+            Link=novo_texto)
+
+        dados.salva('eventos', data)
 
 
 def welcome(update, context, new_member):

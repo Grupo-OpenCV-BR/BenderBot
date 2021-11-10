@@ -9,3 +9,7 @@ conf/__pycache__
 
 .idea
 /.idea
+
+
+Pipfile.lock
+/Pipfile.lock

@@ -17,7 +17,6 @@ def echo(update, context):
             chat_id=chat_id, text="Oi, vamos tomar um Velho Fortran?"
         )
 
-    
     elif "boa noite" in message:
         context.bot.send_message(
             chat_id=chat_id,
@@ -35,7 +34,7 @@ def echo(update, context):
             chat_id=chat_id,
             text="É, tá com muito tempo mesmo ?!?!",
         )
-    
+
     elif "delphi" in message:
         context.bot.send_message(
             chat_id=chat_id,
@@ -114,36 +113,36 @@ def echo(update, context):
                 "images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
 
-    elif  "Preciso de Ajuda" in message or  "Alguém me ajuda" in message or  "Alguem me ajuda" in message or  "alguem me ajuda" in message or "alguém me ajuda" in message:
+    elif "Preciso de Ajuda" in message or "Alguém me ajuda" in message or "Alguem me ajuda" in message or "alguem me ajuda" in message or "alguém me ajuda" in message:
         context.bot.send_photo(chat_id=chat_id, photo=open(
             "images/send_my_burguer_image.jpg", "rb"))
 
-    elif  "indian"  in message or "chineses" in message or  "china" in message:
+    elif "indian" in message or "chineses" in message or "china" in message:
         context.bot.send_photo(chat_id=chat_id, photo=open(
             "images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 
-    #elif '#evento' in message:
+    # elif '#evento' in message:
         #file_id = message.document.file_id
         #newFile = bot.get_file(file_id)
-        #newFile.download()
+        # newFile.download()
 
         #update.message.reply_text("Image received")
 
-        #dates = re.findall(
+        # dates = re.findall(
         #    '([1-9]|1[0-9]|2[0-9]|3[0-1]|0[0-9])(.|-|\/)([1-9]|1[0-2]|0[0-9])(.|-|\/)(20[0-9][0-9])', message)
 
         #dates = [''.join(dates[i]) for i in range(len(dates))]
 
-        #print(dates)
+        # print(dates)
 
-        #pattern = r'(?:#?\b\w\w+\b)'
+        # pattern = r'(?:#?\b\w\w+\b)'
         #pattern = re.compile(pattern)
         #results = pattern.findall(message)
 
         #novo_texto = " ".join(results[1:-1])
-        #print(novo_texto)
+        # print(novo_texto)
 
-        #data = dict(
+        # data = dict(
         #    data=dates[0],
         #    Nome=novo_texto,
         #    Link=novo_texto)

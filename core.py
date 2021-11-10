@@ -24,7 +24,8 @@ DEBUG = True if os.getenv("DEBUG") else False
 PORT = int(os.environ.get('PORT', '5000'))
 
 # Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logging.info(str(PORT))
 
 
@@ -47,20 +48,22 @@ def main():
     dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
     dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
 
-    echo_handler = MessageHandler(Filters.text & (~Filters.command), messagehandlers.echo)
+    echo_handler = MessageHandler(Filters.text & (
+        ~Filters.command), messagehandlers.echo)
     dispatcher.add_handler(echo_handler)
-    sys_handler = MessageHandler(Filters.status_update, messagehandlers.empty_message)
+    sys_handler = MessageHandler(
+        Filters.status_update, messagehandlers.empty_message)
     dispatcher.add_handler(sys_handler)
     dispatcher.add_error_handler(error)
 
-    updater.start_polling()
+    # updater.start_polling()
 
     logging.info(f'Porta de comunicação {PORT}')
 
-    #updater.start_webhook(listen="0.0.0.0",
-    #                      port=PORT,
-    #                      url_path=TELEGRAM_TOKEN,
-    #                   webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
+    updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=TELEGRAM_TOKEN,
+                          webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
     updater.idle()
 
 

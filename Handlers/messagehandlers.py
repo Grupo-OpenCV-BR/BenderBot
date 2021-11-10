@@ -38,7 +38,7 @@ def echo(update, context):
     elif "delphi" in message:
         context.bot.send_message(
             chat_id=chat_id,
-            text="É, tá com muito tempo mesmo ?!?!",
+            text="Delphi, tá de sacanagem né ?!?!",
         )
 
     elif "muito bom" in message:

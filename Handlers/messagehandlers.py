@@ -17,70 +17,77 @@ def echo(update, context):
             chat_id=chat_id, text="Oi, vamos tomar um Velho Fortran?"
         )
 
-    elif message == ["Boa noite", "Boa noite Bender", "Boa noite bender"]:
+    
+    elif "boa noite" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Vai humano !",
         )
 
-    elif message == ["Bom dia Bender", "Bom dia bender"]:
+    elif "bom dia" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Tá com tempo humano ?!?!",
         )
 
-    elif message == ["Boa tarde Bender", "Boa tarde bender"]:
+    elif "boa tarde" in message:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="É, tá com muito tempo mesmo ?!?!",
+        )
+    
+    elif "delphi" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="É, tá com muito tempo mesmo ?!?!",
         )
 
-    elif message == "muito bom":
+    elif "muito bom" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Qualquer coisa abaixo da imortalidade é uma perda de tempo completa!",
         )
 
-    elif message in ["ajuda", "ajudar"]:
+    elif "ajuda" in message:
         context.bot.send_message(
             chat_id=chat_id, text="Humanos... Sempre precisando de ajuda.. tsc.. tsc..."
         )
 
-    elif message in ["obrigado", "obrigada"]:
+    elif "obrigad" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Como posso ser tão ruim em tudo que tento e ainda ser melhor que vocês?",
         )
 
-    elif message == "java":
+    elif "java" in message:
         context.bot.send_message(
             chat_id=chat_id, text="Java? Esse grupo já foi melhor, hein!"
         )
 
-    elif message == "php":
+    elif "php" in message:
         context.bot.send_message(
             chat_id=chat_id, text="PHP? Você acordou de um coma?")
 
-    elif message in ["teoria", "teórico", "teorico"]:
+    elif "teori" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Teoria? Tá brincando com a minha cara? "
                  + "Bora meter a mão na porra do código!",
         )
 
-    elif message == "excelente":
+    elif "excelente" in message:
         context.bot.send_message(
             chat_id=chat_id, text="Excelente? Eu sei que sou, humanos..."
         )
 
-    elif message in ["maquina", "pc", "computador"]:
+    elif "maquina" in message or "pc" in message or "computador" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Sendo sincero, se teu PC fosse um microondas, "
                  + "não rodava nem o prato.",
         )
 
-    elif message == "c++":
+    elif "c++" in message:
         context.bot.send_message(
             chat_id=chat_id,
             text="Vocês sabem o que o C++ disse para o C?"
@@ -88,67 +95,60 @@ def echo(update, context):
                  + "Resposta: Você não tem classe!",
         )
 
-    elif message in ["puto", "puta"]:
+    elif "puto" in message or "puta" in message:
         context.bot.send_photo(chat_id=chat_id, photo=open(
             "images/baixa_bola.jpg", "rb"))
 
-    elif message == "assembly":
+    elif "assembly" in message:
         context.bot.send_message(
             chat_id=chat_id, text="Assembly? De qual período da pré-história é você? "
         )
 
-    elif message == "fortran":
+    elif "fortran" in message:
         context.bot.send_message(
             chat_id=chat_id, text="Fortran ? É uma brasa mora ! ")
 
-    elif message in [
-        "projeto",
-        "projetinho",
-        "ideia",
-        "interno",
-        "parceria",
-        "hackathon",
-    ]:
+    elif "projeto" in message or "projetinho" in message or "ideia" in message or "interno" in message or "parceria" in message or "hackathon" in message:
         context.bot.send_photo(
             chat_id=chat_id, photo=open(
                 "images/fry_shut_up_and_take_my_money.jpg", "rb")
         )
 
-    elif message in ["Preciso de Ajuda", "Alguém me ajuda", "Alguem me ajuda", "alguem me ajuda", "alguém me ajuda"]:
+    elif  "Preciso de Ajuda" in message or  "Alguém me ajuda" in message or  "Alguem me ajuda" in message or  "alguem me ajuda" in message or "alguém me ajuda" in message:
         context.bot.send_photo(chat_id=chat_id, photo=open(
             "images/send_my_burguer_image.jpg", "rb"))
 
-    elif message in ["indiano", "indianos", "chineses", "china"]:
+    elif  "indian"  in message or "chineses" in message or  "china" in message:
         context.bot.send_photo(chat_id=chat_id, photo=open(
             "images/fry_shut_up_and_take_my_money_v2.jpg", "rb"))
 
-    elif '#evento' in message:
-        file_id = message.document.file_id
-        newFile = bot.get_file(file_id)
-        newFile.download()
-                
-        update.message.reply_text("Image received")
+    #elif '#evento' in message:
+        #file_id = message.document.file_id
+        #newFile = bot.get_file(file_id)
+        #newFile.download()
 
-        dates = re.findall(
-            '([1-9]|1[0-9]|2[0-9]|3[0-1]|0[0-9])(.|-|\/)([1-9]|1[0-2]|0[0-9])(.|-|\/)(20[0-9][0-9])', message)
+        #update.message.reply_text("Image received")
 
-        dates = [''.join(dates[i]) for i in range(len(dates))]
+        #dates = re.findall(
+        #    '([1-9]|1[0-9]|2[0-9]|3[0-1]|0[0-9])(.|-|\/)([1-9]|1[0-2]|0[0-9])(.|-|\/)(20[0-9][0-9])', message)
 
-        print(dates)
+        #dates = [''.join(dates[i]) for i in range(len(dates))]
 
-        pattern = r'(?:#?\b\w\w+\b)'
-        pattern = re.compile(pattern)
-        results = pattern.findall(message)
+        #print(dates)
 
-        novo_texto = " ".join(results[1:-1])
-        print(novo_texto)
+        #pattern = r'(?:#?\b\w\w+\b)'
+        #pattern = re.compile(pattern)
+        #results = pattern.findall(message)
 
-        data = dict(
-            data=dates[0],
-            Nome=novo_texto, 
-            Link=novo_texto)
+        #novo_texto = " ".join(results[1:-1])
+        #print(novo_texto)
 
-        dados.salva('eventos', data)
+        #data = dict(
+        #    data=dates[0],
+        #    Nome=novo_texto,
+        #    Link=novo_texto)
+
+        #dados.salva('eventos', data)
 
 
 def welcome(update, context, new_member):

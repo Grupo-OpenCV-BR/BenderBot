@@ -12,7 +12,7 @@ def echo(update, context):
     message = update.message.text.lower()
     chat_id = update.effective_chat.id
 
-    if message == "oi bender":
+    if  "oi bender" in message or "bender" in message :
         context.bot.send_message(
             chat_id=chat_id, text="Oi, vamos tomar um Velho Fortran?"
         )

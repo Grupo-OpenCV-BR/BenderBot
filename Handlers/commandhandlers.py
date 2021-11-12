@@ -66,7 +66,7 @@ def vagas(update, context):
 
     context.bot.send_message(chat_id=update.effective_user.id,
                              text="Vagas de Visão Computacional \n\n" +
-                                  "Visão Computacional -> https://www.linkedin.com/jobs/search/?currentJobId=2750487839&f_WT=2&geoId=106057199&keywords=%22Vis%C3%A3o%20computacional%22&location=Brasil" +
+                                  "Visão Computacional -> https://www.linkedin.com/jobs/search/?geoId=106057199&keywords=%22Vis%C3%A3o%20computacional%22%20%22OpenCV%22&location=Brasil" +
                                   "A Até conseguirmos criar uma plataforma de visualização dessas vagas aqui no grupo, iremos usar o link acima.\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
                                   "@ natalia_py, @andreemidio1 , @ TioPerneta e @ hugueds \n\n" +

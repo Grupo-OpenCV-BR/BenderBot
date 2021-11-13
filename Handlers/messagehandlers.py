@@ -94,6 +94,13 @@ def echo(update, context):
                  + "Resposta: Você não tem classe!",
         )
 
+    elif "windows" in message:
+        context.bot.send_message(
+            chat_id=chat_id,
+            text="Herege, usando ruindows ..."
+        )
+        
+
     elif "puto" in message or "puta" in message:
         context.bot.send_photo(chat_id=chat_id, photo=open(
             "images/baixa_bola.jpg", "rb"))

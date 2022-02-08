@@ -52,6 +52,16 @@ def repo(update, context):
                                   "# E vão estudar bando de baderneiros !!")
 
 
+    
+def facematch(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Facematch\n\n" +
+                                  "Basicamente é comparar uma face com seu banco de dados de face e assim validar aquela pessoa \n\n" +
+                                  "Essas referências são boas para segurança (Validação da face ), onde você pode usar \n\n" + 
+                                  "Referência teórica \n\n" +
+                                  "OpenFace  ->https://cmusatyalab.github.io/openface/ \n\n" +
+                                  "Lib Python \n\n" +
+                                  "deepface -> https://github.com/serengil/deepface \n\n" )
 
 def vagas(update, context):
     bot = context.bot

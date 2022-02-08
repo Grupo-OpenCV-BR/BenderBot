@@ -41,6 +41,7 @@ def main():
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
+    dispatcher.add_handler(CommandHandler('facematch', commandhandlers.facematch))
     dispatcher.add_handler(CommandHandler('eventos', commandhandlers.eventos))
     dispatcher.add_handler(CommandHandler('repo', commandhandlers.repo))
     dispatcher.add_handler(CommandHandler('vagas', commandhandlers.vagas))

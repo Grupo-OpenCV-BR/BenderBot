@@ -159,6 +159,7 @@ def welcome(update, context, new_member):
              + "!"
              + " Seja bem vindo ao Grupo OpenCV Brasil!\n"
              + "\nLeia as regras do grupo: https://github.com/Grupo-OpenCV-BR/Regras"
+             + "\n\n Temos discord também https://discord.gg/kEyxq4QBue \n\n"
              + "\n\nConheça nosso repositório de conteúdo gratuito: https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n"
              + generateOffensePerson.set_xing(new_member.first_name),
         parse_mode="Markdown",

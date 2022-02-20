@@ -1,5 +1,6 @@
 import core
 import re
+import time
 from Handlers import dados
 from config.settings import BOT_NAME
 from features import generateOffensePerson
@@ -158,6 +159,7 @@ def echo(update, context):
 
 
 def welcome(update, context, new_member):
+    time.sleep(300)
     context.bot.send_message(
         chat_id=update.effective_chat.id,
         text="Olá, "

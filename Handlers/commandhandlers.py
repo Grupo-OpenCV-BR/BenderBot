@@ -133,6 +133,8 @@ def help(update, context):
                              text="LISTA DE COMANDOS:\n" +
                                   "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
                                   "/repo -> Comando para acessar nossos repositórios\n" +
+                                  "/facematch -> Informações sobre facematch\n" +
+                                  "/medicas -> Informações sobre Imagens Médicas\n" +
                                   "/vagas -> Comando para mostrar vagas de CV \n" +
                                   "/mute_ -> Comando para eu calar a minha boca\n" +
                                   "/unmute -> Comando para que eu volte a xingar vocês\n" +

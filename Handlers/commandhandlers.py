@@ -66,6 +66,14 @@ def facematch(update, context):
                                   "Lib Python \n\n" +
                                   "deepface -> https://github.com/serengil/deepface \n\n" )
 
+   
+def medicas(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Imagens Médicas \n\n" +                              
+                                  "Uma referência sobre processamento de imagens médicas \n\n" + 
+                                  "Imagens Médicas  ->https://grupo-opencv-br.github.io/imagens-medicas/ \n\n"
+                            )
+    
 def vagas(update, context):
     bot = context.bot
     url = helpers.create_deep_linked_url(bot.username, SO_COOL)

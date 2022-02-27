@@ -30,13 +30,10 @@ def start(update, context):
 
 
 def eventos(update, context):
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open("images/photo_2021-11-04_17-53-06.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open("images/420947.jpg", "rb"))
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text=f"@{update.effective_chat.username} o(s) próximo(s) evento(s)\n\n" +
-                                  "Introdução a Visão Computacional" +
-                                  "Data :  09/11/2021 \n\n" +
-                                  "Horário :  19h \n\n" +
-                                  "Instrutor :  Elton Fernando \n\n" +
+                                  "Sem eventos Humanos \n\n" +
                                   "# E vão estudar bando de baderneiros !!")
 
 def repo(update, context):
@@ -79,7 +76,8 @@ def tutoriais(update, context):
                                   "Uma referência sobre Visão Computacional \n\n" + 
                                   "Tutoriais e Tecnologia -> https://grupo-opencv-br.github.io/tutoriais-tecnologia/ \n\n"
                             )
-    
+ 
+
     
 def vagas(update, context):
     bot = context.bot
@@ -94,7 +92,7 @@ def vagas(update, context):
 
     context.bot.send_message(chat_id=update.effective_user.id,
                              text="Vagas de Visão Computacional \n\n" +
-                                  "Visão Computacional -> https://www.linkedin.com/jobs/search/?currentJobId=2750487839&f_WT=2&geoId=106057199&keywords=%22Vis%C3%A3o%20computacional%22&location=Brasil" +
+                                  "Visão Computacional -> https://www.linkedin.com/jobs/search/?geoId=106057199&keywords=%22Vis%C3%A3o%20computacional%22%20%22OpenCV%22&location=Brasil" +
                                   "A Até conseguirmos criar uma plataforma de visualização dessas vagas aqui no grupo, iremos usar o link acima.\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +
                                   "@ natalia_py, @andreemidio1 , @ TioPerneta e @ hugueds \n\n" +
@@ -140,6 +138,7 @@ def help(update, context):
                              text="LISTA DE COMANDOS:\n" +
                                   "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
                                   "/tutoriais -> Comando para acessar Tutoriais e Tecnologia" + 
+                                  "/eventos -> Comando para que eu mostre eventos.\n" +
                                   "/repo -> Comando para acessar nossos repositórios\n" +
                                   "/facematch -> Informações sobre facematch\n" +
                                   "/medicas -> Informações sobre Imagens Médicas\n" +

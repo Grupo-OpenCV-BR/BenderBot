@@ -73,6 +73,13 @@ def medicas(update, context):
                                   "Uma referência sobre processamento de imagens médicas \n\n" + 
                                   "Imagens Médicas  ->https://grupo-opencv-br.github.io/imagens-medicas/ \n\n"
                             )
+def tutoriais(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="Tutoriais e Dicas \n\n" +                              
+                                  "Uma referência sobre Visão Computacional \n\n" + 
+                                  "Tutoriais e Tecnologia -> https://grupo-opencv-br.github.io/tutoriais-tecnologia/ \n\n"
+                            )
+    
     
 def vagas(update, context):
     bot = context.bot
@@ -132,6 +139,7 @@ def help(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="LISTA DE COMANDOS:\n" +
                                   "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
+                                  "/tutoriais -> Comando para acessar Tutoriais e Tecnologia" + 
                                   "/repo -> Comando para acessar nossos repositórios\n" +
                                   "/facematch -> Informações sobre facematch\n" +
                                   "/medicas -> Informações sobre Imagens Médicas\n" +

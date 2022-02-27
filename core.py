@@ -40,6 +40,7 @@ def main():
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
+    dispatcher.add_handler(CommandHandler('tutoriais', commandhandlers.tutoriais))
     dispatcher.add_handler(CommandHandler('facematch', commandhandlers.facematch))
     dispatcher.add_handler(CommandHandler('medicas', commandhandlers.medicas))
     dispatcher.add_handler(CommandHandler('eventos', commandhandlers.eventos))

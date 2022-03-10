@@ -39,11 +39,11 @@ def eventos(update, context):
 def repo(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Nossos repositórios\n\n" +
-                                  "Grupo-OpenCV-BR -> https://github.com/Grupo-OpenCV-BR\n\n" +
-                                  "Tutoriais e Dicas -> https://github.com/Grupo-OpenCV-BR/tutoriais-tecnologia \n\n" +
+                                  "Grupo-OpenCV-BR -> https://github.com/Grupo-OpenCV-BR \n\n" +
+                                  "Tutoriais e Dicas -> https://grupo-opencv-br.github.io/tutoriais-tecnologia/ \n\n" +
                                   "Desafios -> https://github.com/Grupo-OpenCV-BR/desafios \n\n" +
-                                  "Imagens Médicas -> https://github.com/Grupo-OpenCV-BR/imagens-medicas\n\n" +
-                                  "Prova e testes -> https://github.com/Grupo-OpenCV-BR/imagens-medicas \n\n" +
+                                  "Imagens Médicas -> https://grupo-opencv-br.github.io/imagens-medicas/ \n\n" +
+                                  "Prova e testes -> https://github.com/Grupo-OpenCV-BR/provas-testes \n\n" +
                                   "CookBook -> https://github.com/Grupo-OpenCV-BR/cookbook \n\n" +
                                   "Claro , o repositório mais importante -> https://github.com/Grupo-OpenCV-BR/BenderBot \n\n" +
                                   "A contribuição é aberta, só mandar a PR que a @natalia_py e o @andreemidio1 aprovam\n\n " +

@@ -44,7 +44,7 @@ def repo(update, context):
                                   "Desafios -> https://github.com/Grupo-OpenCV-BR/desafios \n\n" +
                                   "Imagens Médicas -> https://grupo-opencv-br.github.io/imagens-medicas/ \n\n" +
                                   "Prova e testes -> https://github.com/Grupo-OpenCV-BR/provas-testes \n\n" +
-                                  "CookBook -> https://github.com/Grupo-OpenCV-BR/cookbook \n\n" +
+                                  "CookBook -> https://grupo-opencv-br.github.io/ \n\n" +
                                   "Claro , o repositório mais importante -> https://github.com/Grupo-OpenCV-BR/BenderBot \n\n" +
                                   "A contribuição é aberta, só mandar a PR que a @natalia_py e o @andreemidio1 aprovam\n\n " +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +

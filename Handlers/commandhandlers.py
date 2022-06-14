@@ -33,8 +33,13 @@ def eventos(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open("images/420947.jpg", "rb"))
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text=f"@{update.effective_chat.username} o(s) próximo(s) evento(s)\n\n" +
-                                  "Sem eventos Humanos \n\n" +
-                                  "# E vão estudar bando de baderneiros !!")
+                                    "Tem evento Humanos \n\n" +
+                                    "E ai rapaziada, O Matheus falará sobre visão computacional e ele tem muito conhecimento na área, vale super a pena ver. \n\n" +
+                                    "Live sobre Visão computacional com  Matheus Barcelos Especialista em Visão Computacional e Engenheiro de Inteligência Artificial \n\n" +
+                                    "Horário: 20h30 \n\n" +
+                                    "Data: 16/06/2022 \n\n" +
+                                    "Canal: https://www.youtube.com/watch?v=ydlpV7gf_lQ \n\n" +
+                                    "# E vão estudar bando de baderneiros !!")
 
 def repo(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,

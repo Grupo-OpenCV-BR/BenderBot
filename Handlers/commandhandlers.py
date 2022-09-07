@@ -63,8 +63,9 @@ def facematch(update, context):
                              text="Facematch\n\n" +
                                   "Basicamente é comparar uma face com seu banco de dados de face e assim validar aquela pessoa \n\n" +
                                   "Essas referências são boas para segurança (Validação da face ), onde você pode usar \n\n" + 
-                                  "Referência teórica \n\n" +
+                                  "Referências teóricas \n\n" +
                                   "OpenFace  ->https://cmusatyalab.github.io/openface/ \n\n" +
+                                  "What is Face Detection? – The Ultimate Guide for 2022  -> https://learnopencv.com/what-is-face-detection-the-ultimate-guide/ \n\n" +
                                   "Lib Python \n\n" +
                                   "deepface -> https://github.com/serengil/deepface \n\n" )
 

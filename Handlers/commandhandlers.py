@@ -131,7 +131,7 @@ def unmute(update, context):
                                     text= "I'm back, bitches! Mordam a minha bunda de metal!")
 
 
-def help(update, context):
+def ajuda(update, context):
     # blackListManager.free_members()
     # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "help")
     #
@@ -151,7 +151,7 @@ def help(update, context):
                                   "/vagas -> Comando para mostrar vagas de CV \n" +
                                   "/mute_ -> Comando para eu calar a minha boca\n" +
                                   "/unmute -> Comando para que eu volte a xingar vocês\n" +
-                                  "/help -> Comando que exibe esta lista de comandos\n\n" +
+                                  "/ajuda -> Comando que exibe esta lista de comandos\n\n" +
                                   "ATENÇÃO\n" +
                                   "Se eu ficar xingando de madrugada, basta usar o comando /mute_\n" +
                                   "Se eu apresentar mal funcionamento, fale com os idiotas que cuidam da minha manutenção:\n" +

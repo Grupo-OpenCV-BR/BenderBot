@@ -49,7 +49,7 @@ def main():
     dispatcher.add_handler(CommandHandler('vagas', commandhandlers.vagas))
     dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
     dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
-    dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
+    dispatcher.add_handler(CommandHandler('ajuda', commandhandlers.ajuda))
 
     echo_handler = MessageHandler(Filters.text & (
         ~Filters.command), messagehandlers.echo)

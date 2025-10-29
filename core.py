@@ -1,9 +1,11 @@
+import logging, os
+from telegram.ext import (
+    ApplicationBuilder,
+    CommandHandler,
+    MessageHandler,
+    filters,
+)
 import logging
-import os
-
-from telegram.ext import CommandHandler
-from telegram.ext import MessageHandler, Filters
-from telegram.ext import Updater
 
 from Bot import Bot
 from Handlers import commandhandlers, messagehandlers
@@ -28,46 +30,39 @@ logging.basicConfig(
 logging.info(str(PORT))
 
 
-def error(update, context):
+async def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
-
 def main():
-    request.DontStopmeNOW()
 
-    updater = Updater(token=TELEGRAM_TOKEN, use_context=True)
+    application = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
-    dispatcher = updater.dispatcher
+    # Adicionando handlers diretamente ao application
+    application.add_handler(CommandHandler('start', commandhandlers.start))
+    application.add_handler(CommandHandler('tutoriais', commandhandlers.tutoriais))
+    application.add_handler(CommandHandler('facematch', commandhandlers.facematch))
+    application.add_handler(CommandHandler('medicas', commandhandlers.medicas))
+    application.add_handler(CommandHandler('eventos', commandhandlers.eventos))
+    application.add_handler(CommandHandler('repo', commandhandlers.repo))
+    application.add_handler(CommandHandler('vagas', commandhandlers.vagas))
+    application.add_handler(CommandHandler('mute_', commandhandlers.mute_))
+    application.add_handler(CommandHandler('unmute', commandhandlers.unmute))
+    application.add_handler(CommandHandler('help', commandhandlers.help))
 
-    dispatcher.add_handler(CommandHandler('start', commandhandlers.start))
-    dispatcher.add_handler(CommandHandler('tutoriais', commandhandlers.tutoriais))
-    dispatcher.add_handler(CommandHandler('facematch', commandhandlers.facematch))
-    dispatcher.add_handler(CommandHandler('medicas', commandhandlers.medicas))
-    dispatcher.add_handler(CommandHandler('eventos', commandhandlers.eventos))
-    dispatcher.add_handler(CommandHandler('repo', commandhandlers.repo))
-    dispatcher.add_handler(CommandHandler('vagas', commandhandlers.vagas))
-    dispatcher.add_handler(CommandHandler('mute_', commandhandlers.mute_))
-    dispatcher.add_handler(CommandHandler('unmute', commandhandlers.unmute))
-    dispatcher.add_handler(CommandHandler('help', commandhandlers.help))
+    # Adaptando filtros
+    echo_handler = MessageHandler(filters.TEXT & ~filters.COMMAND, messagehandlers.echo)
+    application.add_handler(echo_handler)
 
-    echo_handler = MessageHandler(Filters.text & (
-        ~Filters.command), messagehandlers.echo)
-    dispatcher.add_handler(echo_handler)
-    sys_handler = MessageHandler(
-        Filters.status_update, messagehandlers.empty_message)
-    dispatcher.add_handler(sys_handler)
-    dispatcher.add_error_handler(error)
+    sys_handler = MessageHandler(filters.StatusUpdate.ALL, messagehandlers.empty_message)
+    application.add_handler(sys_handler)
 
-    #updater.start_polling()
-    
+    application.add_error_handler(error)
 
     logging.info(f'Porta de comunicação {PORT}')
 
-    updater.start_webhook(listen="0.0.0.0",
-                          port=PORT,
-                          url_path=TELEGRAM_TOKEN,
-                         webhook_url='https://bender-opencv.herokuapp.com/' + TELEGRAM_TOKEN)
-    updater.idle()
+    # Iniciando via webhook
+    application.run_polling()
+
 
 
 if __name__ == "__main__":

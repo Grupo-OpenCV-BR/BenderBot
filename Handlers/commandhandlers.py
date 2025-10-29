@@ -1,5 +1,5 @@
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.utils import helpers
+import telegram.helpers as helpers
 
 import core
 from features import generateOffense
@@ -8,30 +8,30 @@ from features import timeHelper
 SO_COOL = "so-cool"
 
 
-def callback_minute(context):
+async def callback_minute(context):
     if timeHelper.get_actual_time() >= 0 and timeHelper.get_actual_time() <= 7:
         return
     if not core.bender_bot.mute:
-        chat_id = context.job.context
-        context.bot.send_message(chat_id=chat_id,
+        chat_id = context.job.data
+        await context.bot.send_message(chat_id=chat_id,
                                  text=generateOffense.generateOffense())
 
 
-def start(update, context):
+async def start(update, context):
     if not core.bender_bot.offenseOn and not (0 <= timeHelper.get_actual_time() <= 7):
         core.bender_bot.offenseOn = True
         context.job_queue.run_repeating(callback_minute, interval=3600, first=1,
-                                        context=update.message.chat_id)
+                                        data=update.message.chat_id)
     else:
         if not (timeHelper.get_actual_time() >= 0 and timeHelper.get_actual_time() <= 7):
-            context.bot.send_message(chat_id=update.effective_chat.id,
+            await context.bot.send_message(chat_id=update.effective_chat.id,
                                      text="Seu degenerado! Alguém já deu start em mim! " +
                                           "Se você quer tanto assim que eu te humilhe, espere a sua vez!")
 
 
-def eventos(update, context):
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open("images/420947.jpg", "rb"))
-    context.bot.send_message(chat_id=update.effective_chat.id,
+async def eventos(update, context):
+    await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open("images/420947.jpg", "rb"))
+    await context.bot.send_message(chat_id=update.effective_chat.id,
                              text=f"@{update.effective_chat.username} o(s) próximo(s) evento(s)\n\n" +
                                     "Tem evento Humanos \n\n" +
                                     "E ai rapaziada, O Matheus falará sobre visão computacional e ele tem muito conhecimento na área, vale super a pena ver. \n\n" +
@@ -41,8 +41,8 @@ def eventos(update, context):
                                     "Canal: https://www.youtube.com/watch?v=ydlpV7gf_lQ \n\n" +
                                     "# E vão estudar bando de baderneiros !!")
 
-def repo(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+async def repo(update, context):
+    await context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Nossos repositórios\n\n" +
                                   "Grupo-OpenCV-BR -> https://github.com/Grupo-OpenCV-BR \n\n" +
                                   "Tutoriais e Dicas -> https://grupo-opencv-br.github.io/tutoriais-tecnologia/ \n\n" +
@@ -58,8 +58,8 @@ def repo(update, context):
 
 
     
-def facematch(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+async def facematch(update, context):
+    await context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Facematch\n\n" +
                                   "Basicamente é comparar uma face com seu banco de dados de face e assim validar aquela pessoa \n\n" +
                                   "Essas referências são boas para segurança (Validação da face ), onde você pode usar \n\n" + 
@@ -70,14 +70,14 @@ def facematch(update, context):
                                   "deepface -> https://github.com/serengil/deepface \n\n" )
 
    
-def medicas(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+async def medicas(update, context):
+    await context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Imagens Médicas \n\n" +                              
                                   "Uma referência sobre processamento de imagens médicas \n\n" + 
                                   "Imagens Médicas  ->https://grupo-opencv-br.github.io/imagens-medicas/ \n\n"
                             )
-def tutoriais(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+async def tutoriais(update, context):
+    await context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Tutoriais e Dicas \n\n" +                              
                                   "Uma referência sobre Visão Computacional \n\n" + 
                                   "Tutoriais e Tecnologia -> https://grupo-opencv-br.github.io/tutoriais-tecnologia/ \n\n"
@@ -85,7 +85,7 @@ def tutoriais(update, context):
  
 
     
-def vagas(update, context):
+async def vagas(update, context):
     bot = context.bot
     url = helpers.create_deep_linked_url(bot.username, SO_COOL)
 
@@ -93,10 +93,10 @@ def vagas(update, context):
         InlineKeyboardButton("Só me chame se nunca falou comigo rs", url=url)
     )
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Humano para receber vagas me chame no privado.",
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Humano para receber vagas me chame no privado.",
                              reply_markup=keyboard)
 
-    context.bot.send_message(chat_id=update.effective_user.id,
+    await context.bot.send_message(chat_id=update.effective_user.id,
                              text="Vagas de Visão Computacional \n\n" +
                                   "Visão Computacional -> https://www.linkedin.com/jobs/search/?geoId=106057199&keywords=%22Vis%C3%A3o%20computacional%22%20%22OpenCV%22&location=Brasil" +
                                   "A Até conseguirmos criar uma plataforma de visualização dessas vagas aqui no grupo, iremos usar o link acima.\n\n " +
@@ -105,7 +105,7 @@ def vagas(update, context):
                                   "Parem de vacilação e corram atrás, se você não for, você é um bundão !! \n\n")
 
 
-def mute_(update, context):
+async def mute_(update, context):
     # blackListManager.free_members()
     # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "mute")
 
@@ -118,20 +118,20 @@ def mute_(update, context):
         pass
     else:
         core.bender_bot.mute = True
-        context.bot.send_message(chat_id=update.effective_chat.id, 
+        await context.bot.send_message(chat_id=update.effective_chat.id, 
                                             text= "Ok... Ok... Estou calando a boca!")
 
 
-def unmute(update, context):
+async def unmute(update, context):
     if not core.bender_bot.mute:
         pass
     else:       
         core.bender_bot.mute = False
-        context.bot.send_message(chat_id=update.effective_chat.id, 
+        await context.bot.send_message(chat_id=update.effective_chat.id, 
                                     text= "I'm back, bitches! Mordam a minha bunda de metal!")
 
 
-def help(update, context):
+async def help(update, context):
     # blackListManager.free_members()
     # member_in_blacklist = blackListManager.is_member_in_blacklist(update.message.from_user.first_name, "help")
     #
@@ -140,7 +140,7 @@ def help(update, context):
     # else:
     #     blackListManager.add_member(update.message.from_user.first_name, "help")
     #
-    context.bot.send_message(chat_id=update.effective_chat.id,
+    await context.bot.send_message(chat_id=update.effective_chat.id,
                              text="LISTA DE COMANDOS:\n" +
                                   "/start -> Comando para que eu envie xingamentos a cada 1h\n" +
                                   "/tutoriais -> Comando para acessar Tutoriais e Tecnologia" + 
